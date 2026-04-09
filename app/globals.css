@@ -38,13 +38,14 @@ a { color: inherit; }
   align-items: center;
 }
 .logo {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: var(--primary-dark);
   text-decoration: none;
-  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
 }
-.logo span { color: var(--primary); }
+.logo img {
+  height: 50px;
+  width: auto;
+}
 .nav-links {
   display: flex;
   gap: 2rem;

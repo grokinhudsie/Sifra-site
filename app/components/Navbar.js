@@ -24,7 +24,7 @@ export default function Navbar() {
     <nav className="nav">
       <div className="nav-inner">
         <Link href="/" className="logo">
-          Sifra<span> Birthing Center</span>
+          <img src="/Sifra Birth Center Logo With Tagline_Horizontal Lockup_Three-Line_Two-Color_RGB.svg" alt="Sifra Birth Center" />
         </Link>
         <button
           className="menu-toggle"
