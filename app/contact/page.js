@@ -18,32 +18,27 @@ export default function ContactPage() {
           <div className="contact-grid">
             <div className="contact-info">
               <h3>Visit Us</h3>
-              <div className="contact-item">
-                <span className="icon">📍</span>
-                <div>
-                  <strong>Address</strong>
-                  <span>123 Serenity Lane<br />Wellness District, CA 90210</span>
+              <div className="contact-items-wrap">
+                <div className="contact-item">
+                  <span className="icon"><i className="fi fi-rs-marker"></i></span>
+                  <div>
+                    <strong>Address</strong>
+                    <span>Coming soon!</span>
+                  </div>
                 </div>
-              </div>
-              <div className="contact-item">
-                <span className="icon">📞</span>
-                <div>
-                  <strong>Phone</strong>
-                  <span>(555) 123-4567</span>
+                <div className="contact-item">
+                  <span className="icon"><i className="fi fi-rr-phone-flip"></i></span>
+                  <div>
+                    <strong>Phone</strong>
+                    <span>715-873-3440</span>
+                  </div>
                 </div>
-              </div>
-              <div className="contact-item">
-                <span className="icon">✉️</span>
-                <div>
-                  <strong>Email</strong>
-                  <span>hello@sifrabirthing.com</span>
-                </div>
-              </div>
-              <div className="contact-item">
-                <span className="icon">🕒</span>
-                <div>
-                  <strong>Hours</strong>
-                  <span>Mon–Fri: 8am – 6pm<br />24/7 for birthing families</span>
+                <div className="contact-item">
+                  <span className="icon"><i className="fi fi-rr-envelope"></i></span>
+                  <div>
+                    <strong>Email</strong>
+                    <span>questions@sifrabirth.com</span>
+                  </div>
                 </div>
               </div>
             </div>

@@ -4,8 +4,7 @@ export default function Footer() {
   return (
     <footer>
       <p>
-        © {new Date().getFullYear()} Sifra Birthing Center · Made with love ·{' '}
-        <Link href="/contact">Contact Us</Link>
+        © {new Date().getFullYear()} Sifra Birthing Center
       </p>
     </footer>
   );
