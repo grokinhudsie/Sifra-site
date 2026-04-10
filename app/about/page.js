@@ -6,13 +6,9 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <header className="page-header">
-        <h1>Why Sifra</h1>
-
-      </header>
-
-      <section>
+      <section style={{ paddingBottom: '2rem' }}>
         <div className="container">
+          <h1 className="section-title" style={{ marginBottom: '5rem' }}>Why Sifra</h1>
           <div className="about-grid">
             <img
               src="/About us hero image/AdobeStock_269043563.jpeg"

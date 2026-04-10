@@ -61,7 +61,15 @@ h1, h2, h3, h4, h5, h6 {
   list-style: none;
   border-radius: 50px;
   overflow: hidden;
-  background: var(--secondary);
+  position: relative;
+  background: rgba(136, 90, 145, 0.35);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 8px 32px rgba(92, 49, 96, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
 }
 .nav-links li {
   border-right: 1px solid rgba(255,255,255,0.2);
@@ -84,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(0,0,0,0.1);
 }
 .nav-links a.active {
-  background: var(--primary);
+  background: rgba(92, 49, 96, 0.5);
 }
 .menu-toggle {
   display: none;
@@ -192,7 +200,7 @@ section { padding: 5rem 2rem; }
 
 .page-header {
   text-align: center;
-  padding: 4.5rem 2rem;
+  padding: 2rem 2rem;
   background: linear-gradient(135deg, var(--cream), #fce4d6);
   display: flex;
   flex-direction: column;
@@ -329,11 +337,22 @@ footer a { color: var(--accent); text-decoration: none; }
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--cream);
+    background: rgba(136, 90, 145, 0.35);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
     flex-direction: column;
-    padding: 1.5rem;
-    gap: 1rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    padding: 0;
+    gap: 0;
+    box-shadow: 0 8px 32px rgba(92, 49, 96, 0.2);
+    border-radius: 0 0 16px 16px;
+  }
+  .nav-links li {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .nav-links li:last-child {
+    border-bottom: none;
   }
   .nav-links.open { display: flex; }
   .menu-toggle { display: block; }

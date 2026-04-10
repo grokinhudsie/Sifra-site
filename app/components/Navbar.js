@@ -2,11 +2,23 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const linksRef = useRef(null);
+
+  useEffect(() => {
+    const main = document.querySelector('main');
+    if (open && linksRef.current) {
+      main.style.transition = 'margin-top 0.3s ease';
+      main.style.marginTop = linksRef.current.scrollHeight + 'px';
+    } else {
+      main.style.transition = 'margin-top 0.3s ease';
+      main.style.marginTop = '0';
+    }
+  }, [open]);
 
   const link = (href, label) => (
     <li>
@@ -33,7 +45,7 @@ export default function Navbar() {
         >
           ☰
         </button>
-        <ul className={`nav-links${open ? ' open' : ''}`}>
+        <ul ref={linksRef} className={`nav-links${open ? ' open' : ''}`}>
           {link('/', 'Home')}
           {link('/about', 'About')}
           {link('/contact', 'Contact')}
