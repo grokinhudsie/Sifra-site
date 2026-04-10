@@ -9,7 +9,9 @@ export default function ParallaxHero({ children }) {
     function handleScroll() {
       if (heroRef.current) {
         const scrollY = window.scrollY;
-        heroRef.current.style.backgroundPositionY = `calc(30% + ${scrollY * 0.4}px)`;
+        const isMobile = window.innerWidth <= 768;
+        const xPos = isMobile ? '71%' : 'center';
+        heroRef.current.style.backgroundPosition = `${xPos} calc(30% + ${scrollY * 0.4}px)`;
       }
     }
     window.addEventListener('scroll', handleScroll, { passive: true });

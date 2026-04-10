@@ -55,6 +55,31 @@ h1, h2, h3, h4, h5, h6 {
   height: 100px;
   width: auto;
 }
+.logo .logo-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .nav-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .logo {
+    order: 0;
+    width: 100%;
+    justify-content: center;
+  }
+  .logo .logo-desktop {
+    display: none;
+  }
+  .logo .logo-mobile {
+    display: block;
+  }
+  .menu-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 1.2rem;
+  }
+}
 .nav-links {
   display: flex;
   gap: 0;
@@ -331,6 +356,9 @@ footer {
 footer a { color: var(--accent); text-decoration: none; }
 
 @media (max-width: 768px) {
+  .hero {
+    background-position: 71% 30%;
+  }
   .nav-links {
     display: none;
     position: absolute;
