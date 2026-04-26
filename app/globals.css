@@ -8,10 +8,29 @@
   --muted: #6b6b6b;
   --white: #ffffff;
   --shadow: 0 10px 30px rgba(109, 104, 117, 0.1);
+  --nav-offset: 140px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-offset);
+}
+section[id] { scroll-margin-top: var(--nav-offset); }
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-section { opacity: 1; transform: none; transition: none; }
+}
 
 body {
   font-family: "loretta", serif;
@@ -45,6 +64,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 35px;
 }
 .logo {
   text-decoration: none;
@@ -55,10 +75,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100px;
   width: auto;
 }
-.logo .logo-mobile {
-  display: none;
-}
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .nav-inner {
     flex-wrap: wrap;
     justify-content: center;
@@ -68,12 +85,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     justify-content: center;
   }
-  .logo .logo-desktop {
-    display: none;
-  }
-  .logo .logo-mobile {
-    display: block;
-  }
   .menu-toggle {
     position: absolute;
     right: 1rem;
@@ -82,10 +93,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0;
   list-style: none;
-  border-radius: 50px;
-  overflow: hidden;
+  border-radius: 28px;
   position: relative;
   background: rgba(136, 90, 145, 0.35);
   backdrop-filter: blur(16px) saturate(180%);
@@ -96,15 +108,9 @@ h1, h2, h3, h4, h5, h6 {
     inset 0 1px 0 rgba(255, 255, 255, 0.5),
     inset 0 -1px 0 rgba(255, 255, 255, 0.1);
 }
-.nav-links li {
-  border-right: 1px solid rgba(255,255,255,0.2);
-}
-.nav-links li:last-child {
-  border-right: none;
-}
 .nav-links a {
   display: block;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1.4rem;
   color: var(--white);
   text-decoration: none;
   font-size: 1rem;
@@ -112,12 +118,17 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "loretta", serif;
   font-weight: 300;
   font-style: normal;
+  border-radius: 24px;
 }
 .nav-links a:hover {
   background: rgba(0,0,0,0.1);
 }
 .nav-links a.active {
   background: rgba(92, 49, 96, 0.5);
+}
+@media (min-width: 901px) and (max-width: 1199px) {
+  .nav-links { max-width: 580px; }
+  :root { --nav-offset: 185px; }
 }
 .menu-toggle {
   display: none;
@@ -184,6 +195,9 @@ section { padding: 5rem 2rem; }
   font-size: clamp(2rem, 4vw, 2.8rem);
   color: var(--primary-dark);
   margin-bottom: 1rem;
+}
+.section-title.our-values-title {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
 }
 .section-subtitle {
   text-align: center;
@@ -258,6 +272,17 @@ section { padding: 5rem 2rem; }
 }
 .about-text p { color: var(--muted); margin-bottom: 1rem; }
 .values { background: linear-gradient(135deg, var(--cream), #fce4d6); }
+.bg-sand { background: #fff3ec; }
+.bg-sage { background: #fff8f3; }
+
+.section-divider {
+  width: 75%;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--primary);
+  border: none;
+  border-radius: 2px;
+}
 
 .contact-grid {
   display: grid;
@@ -355,7 +380,7 @@ footer {
 }
 footer a { color: var(--accent); text-decoration: none; }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hero {
     background-position: 71% 30%;
   }
@@ -365,6 +390,7 @@ footer a { color: var(--accent); text-decoration: none; }
     top: 100%;
     left: 0;
     right: 0;
+    max-width: none;
     background: rgba(136, 90, 145, 0.35);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -385,5 +411,7 @@ footer a { color: var(--accent); text-decoration: none; }
   .nav-links.open { display: flex; }
   .menu-toggle { display: block; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .contact-grid .contact-info { order: 2; }
+  .contact-grid .contact-form { order: 1; }
   section { padding: 3.5rem 1.5rem; }
 }
