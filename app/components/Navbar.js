@@ -7,7 +7,7 @@ const LINKS = [
   { href: '/', id: 'home', label: 'Home' },
   { href: '/about', id: 'about', label: 'About Us' },
   { href: '/why-sifra', id: 'why', label: 'Why Sifra' },
-  { href: '/construction-update', id: 'construction', label: 'Construction Update' },
+  { href: '/construction-update', id: 'construction', label: 'Construction Updates' },
   { href: '/midwife-ed-program', id: 'midwife', label: 'Midwife Education Program' },
   { href: '/contact', id: 'contact', label: 'Contact Us' },
 ];
@@ -108,11 +108,12 @@ export default function Navbar() {
 
   const handleNavClick = (e, link) => {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button === 1) return;
-    e.preventDefault();
     setOpen(false);
 
     const targetEl = document.getElementById(link.id);
     if (!targetEl) return;
+
+    e.preventDefault();
 
     const order = getSectionOrder();
     const currentIdx = order.indexOf(activeId);

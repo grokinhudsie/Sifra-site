@@ -39,7 +39,11 @@ body {
   color: var(--text);
   line-height: 1.7;
   background: var(--cream);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+main { flex: 1; display: flex; flex-direction: column; }
 
 a { color: inherit; }
 
@@ -110,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav-links a {
   display: block;
-  padding: 0.5rem 1.4rem;
+  padding: 0.5rem 1.15rem;
   color: var(--white);
   text-decoration: none;
   font-size: 1rem;
@@ -209,8 +213,11 @@ section { padding: 5rem 2rem; }
 
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
+}
+@media (min-width: 900px) {
+  .features { grid-template-columns: repeat(3, 1fr); }
 }
 .feature {
   background: var(--white);

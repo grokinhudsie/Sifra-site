@@ -115,7 +115,7 @@ export default function HomeSections() {
 
       <section id="construction" className="fade-section bg-sage">
         <div className="container">
-          <h2 className="section-title">Construction Update</h2>
+          <h2 className="section-title">Construction Updates</h2>
           <p className="section-subtitle">
             Follow along as Sifra Birthing Center takes shape.
           </p>
