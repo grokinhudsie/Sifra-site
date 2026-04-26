@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export const dynamic = 'force-dynamic';
 
 export async function POST(request) {
   const { name, email, subject, message } = await request.json();
@@ -10,9 +10,17 @@ export async function POST(request) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
   }
 
+  if (!process.env.RESEND_API_KEY) {
+    console.error('Missing RESEND_API_KEY');
+    return NextResponse.json({ error: 'Email service not configured' }, { status: 500 });
+  }
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+
   try {
     const { error } = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL,
+      from: fromEmail,
       to: 'questions@sifrabirth.com',
       replyTo: email,
       subject: `${subject || 'Contact Form'} — from ${name}`,
