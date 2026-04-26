@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
+import { getLenis } from './lenisInstance';
 
 const LINKS = [
   { href: '/', id: 'home', label: 'Home' },
@@ -124,12 +125,18 @@ export default function Navbar() {
 
     setActiveId(link.id);
 
+    const lenis = getLenis();
     if (adjacent) {
-      window.scrollTo({ top, behavior: 'smooth' });
+      document
+        .querySelectorAll('section.fade-section:not(.visible)')
+        .forEach((s) => s.classList.add('visible'));
+      if (lenis) lenis.scrollTo(top);
+      else window.scrollTo({ top, behavior: 'smooth' });
     } else {
       targetEl.classList.remove('visible');
       void targetEl.offsetWidth;
-      window.scrollTo({ top, behavior: 'auto' });
+      if (lenis) lenis.scrollTo(top, { immediate: true });
+      else window.scrollTo({ top, behavior: 'auto' });
       requestAnimationFrame(() => targetEl.classList.add('visible'));
     }
 

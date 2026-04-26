@@ -13,15 +13,16 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: var(--nav-offset);
 }
 section[id] { scroll-margin-top: var(--nav-offset); }
 
 .fade-section {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transform: translateY(16px);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+}
+.fade-section:not(.visible) {
   will-change: opacity, transform;
 }
 .fade-section.visible {
@@ -56,11 +57,15 @@ h1, h2, h3, h4, h5, h6 {
 .nav {
   position: sticky;
   top: 0;
-  background: rgba(255, 248, 243, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 248, 243, 0.97);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   z-index: 100;
   padding: 1.2rem 2rem;
   box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+  transform: translateZ(0);
+  will-change: transform;
+  contain: layout paint;
 }
 .nav-inner {
   max-width: 1200px;
@@ -103,9 +108,9 @@ h1, h2, h3, h4, h5, h6 {
   list-style: none;
   border-radius: 28px;
   position: relative;
-  background: rgba(136, 90, 145, 0.35);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(136, 90, 145, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow:
     0 8px 32px rgba(92, 49, 96, 0.15),
@@ -144,19 +149,42 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero {
+  position: relative;
   min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 4rem 2rem 8rem;
-  background:
-    linear-gradient(to bottom, rgba(255,180,162,0.3) 0%, rgba(181,131,141,0.55) 50%, rgba(255,248,243,1) 100%),
-    url('/Landing hero image/AdobeStock_122610311.jpeg') center/cover;
-  background-position: center 30%;
   color: var(--white);
+  overflow: hidden;
+  isolation: isolate;
 }
-.hero-content { max-width: 800px; }
+.hero-bg {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/Landing hero image/AdobeStock_122610311.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 30%;
+  will-change: transform;
+  z-index: 0;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255,180,162,0.3) 0%, rgba(181,131,141,0.55) 50%, rgba(255,248,243,1) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
 .hero h1 {
   font-size: clamp(2.2rem, 5vw, 4rem);
   margin-bottom: 1.5rem;
@@ -191,7 +219,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow);
 }
 
-section { padding: 5rem 2rem; }
+section { padding: 5rem 2rem; contain: layout paint; }
 .container { max-width: 1200px; margin: 0 auto; }
 
 .section-title {
@@ -271,6 +299,8 @@ section { padding: 5rem 2rem; }
   border-radius: 16px;
   mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
+  transform: translateZ(0);
+  will-change: transform;
 }
 .about-text h2 {
   color: var(--primary-dark);
@@ -388,7 +418,7 @@ footer {
 footer a { color: var(--accent); text-decoration: none; }
 
 @media (max-width: 900px) {
-  .hero {
+  .hero-bg {
     background-position: 71% 30%;
   }
   .nav-links {
@@ -398,9 +428,9 @@ footer a { color: var(--accent); text-decoration: none; }
     left: 0;
     right: 0;
     max-width: none;
-    background: rgba(136, 90, 145, 0.35);
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(136, 90, 145, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     flex-direction: column;
     padding: 0;

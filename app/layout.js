@@ -1,6 +1,7 @@
 import './globals.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import SmoothScroll from './components/SmoothScroll';
 
 export const metadata = {
   title: 'Sifra Birthing Center — Where New Life Begins',
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
       </head>
       <body>
+        <SmoothScroll />
         <Navbar />
         <main>{children}</main>
         <Footer />
