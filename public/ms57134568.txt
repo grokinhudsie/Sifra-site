@@ -1,0 +1,5 @@
+{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "sifrabirth.com",
+  "Id": "c4215ef9-91a9-4ac9-adf5-9e24211565f3"
+}
