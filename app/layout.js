@@ -1,3 +1,4 @@
+import { headers } from 'next/headers';
 import './globals.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -10,6 +11,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const isUnlock = headers().get('x-pathname') === '/unlock';
+
   return (
     <html lang="en">
       <head>
@@ -19,9 +22,9 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <SmoothScroll />
-        <Navbar />
+        {!isUnlock && <Navbar />}
         <main>{children}</main>
-        <Footer />
+        {!isUnlock && <Footer />}
       </body>
     </html>
   );
