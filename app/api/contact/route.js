@@ -21,7 +21,7 @@ export async function POST(request) {
   try {
     const { error } = await resend.emails.send({
       from: fromEmail,
-      to: 'questions@sifrabirth.com',
+      to: 'contact@sifrabirth.com',
       replyTo: email,
       subject: `${subject || 'Contact Form'} — from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`,
