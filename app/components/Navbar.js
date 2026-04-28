@@ -13,31 +13,35 @@ const LINKS = [
   { href: '/contact', id: 'contact', label: 'Contact Us' },
 ];
 
+const ID_TO_HREF = Object.fromEntries(LINKS.map((l) => [l.id, l.href]));
+
 const getSectionOrder = () =>
   Array.from(document.querySelectorAll('section[id]')).map((s) => s.id);
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [activeId, setActiveId] = useState('home');
+  const activeIdRef = useRef('home');
   const linksRef = useRef(null);
 
   useEffect(() => {
-    const main = document.querySelector('main');
-    if (!main) return;
-    if (open && linksRef.current) {
-      main.style.transition = 'margin-top 0.3s ease';
-      main.style.marginTop = linksRef.current.scrollHeight + 'px';
-    } else {
-      main.style.transition = 'margin-top 0.3s ease';
-      main.style.marginTop = '0';
-    }
-  }, [open]);
+    activeIdRef.current = activeId;
+  }, [activeId]);
 
   useEffect(() => {
     let raf = 0;
+    let urlTimer = 0;
     let lastY = window.scrollY;
     let firstRun = true;
     const getNavHeight = () => document.querySelector('nav.nav')?.getBoundingClientRect().height ?? 0;
+
+    const syncUrl = () => {
+      const href = ID_TO_HREF[activeIdRef.current];
+      if (!href) return;
+      if (window.location.pathname !== href && window.history?.replaceState) {
+        window.history.replaceState(null, '', href);
+      }
+    };
 
     const computeActive = () => {
       const navH = getNavHeight();
@@ -90,6 +94,8 @@ export default function Navbar() {
     };
 
     const onScroll = () => {
+      if (urlTimer) clearTimeout(urlTimer);
+      urlTimer = setTimeout(syncUrl, 150);
       if (raf) return;
       raf = requestAnimationFrame(() => {
         computeActive();
@@ -104,6 +110,7 @@ export default function Navbar() {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
       if (raf) cancelAnimationFrame(raf);
+      if (urlTimer) clearTimeout(urlTimer);
     };
   }, []);
 
