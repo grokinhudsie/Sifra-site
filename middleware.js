@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const PUBLIC_PATHS = new Set(['/unlock', '/api/unlock']);
+const PUBLIC_PATHS = new Set(['/unlock', '/api/unlock', '/qr-donate']);
 
 async function expectedToken(secret) {
   const key = await crypto.subtle.importKey(

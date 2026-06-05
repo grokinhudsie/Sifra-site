@@ -11,7 +11,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const isUnlock = headers().get('x-pathname') === '/unlock';
+  const pathname = headers().get('x-pathname');
+  const bare = pathname === '/unlock' || pathname === '/qr-donate';
 
   return (
     <html lang="en">
@@ -22,9 +23,9 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <SmoothScroll />
-        {!isUnlock && <Navbar />}
+        {!bare && <Navbar />}
         <main>{children}</main>
-        {!isUnlock && <Footer />}
+        {!bare && <Footer />}
       </body>
     </html>
   );
