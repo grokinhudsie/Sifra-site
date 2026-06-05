@@ -22,6 +22,10 @@ export async function middleware(req) {
   const requestHeaders = new Headers(req.headers);
   requestHeaders.set('x-pathname', pathname);
 
+  // TEMP: password gate disabled — let all requests through.
+  // To re-enable, remove this block.
+  return NextResponse.next({ request: { headers: requestHeaders } });
+
   if (PUBLIC_PATHS.has(pathname)) {
     return NextResponse.next({ request: { headers: requestHeaders } });
   }
