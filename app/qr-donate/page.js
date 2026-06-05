@@ -25,7 +25,7 @@ const OPTIONS = [
     name: 'stripe',
     label: 'Donate with Card',
     color: '#635BFF',
-    href: 'https://donate.stripe.com/YOUR-PAYMENT-LINK', // TODO: real Stripe Payment Link
+    href: 'https://donate.stripe.com/8x228q5OC3Wd7Ts2Eg3ZK00',
   },
 ];
 
