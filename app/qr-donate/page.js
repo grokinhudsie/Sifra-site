@@ -109,8 +109,8 @@ export default function DonatePage() {
             maxWidth: '340px',
           }}
         >
-          Every gift helps us bring compassionate, family-centered birth care to
-          more families.
+          Every gift helps make compassionate, family-centered birth care a
+          reality.
         </p>
 
         <div
@@ -156,9 +156,9 @@ export default function DonatePage() {
         >
           Official{' '}
           <a href="/" style={{ color: 'var(--secondary)', textDecoration: 'underline' }}>
-            Sifra Birthing Center
+            Sifra Birth Center
           </a>{' '}
-          donation portal.
+          donation portal, a project of Anabaptist Health Ministries, Inc.
         </footer>
       </div>
     </section>
