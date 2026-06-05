@@ -9,18 +9,19 @@ export const metadata = {
 // Three ways to give. Brand-colored buttons, official marks.
 // TODO: swap the placeholder hrefs below for the real destinations.
 const OPTIONS = [
-  {
-    name: 'venmo',
-    label: 'Donate with Venmo',
-    color: '#008CFF',
-    href: 'https://venmo.com/u/YOUR-VENMO-HANDLE', // TODO: real Venmo link
-  },
-  {
-    name: 'paypal',
-    label: 'Donate with PayPal',
-    color: '#003087',
-    href: 'https://www.paypal.com/donate/?hosted_button_id=YOUR-BUTTON-ID', // TODO: real PayPal link
-  },
+  // Temporarily hidden until real links are ready:
+  // {
+  //   name: 'venmo',
+  //   label: 'Donate with Venmo',
+  //   color: '#008CFF',
+  //   href: 'https://venmo.com/u/YOUR-VENMO-HANDLE', // TODO: real Venmo link
+  // },
+  // {
+  //   name: 'paypal',
+  //   label: 'Donate with PayPal',
+  //   color: '#003087',
+  //   href: 'https://www.paypal.com/donate/?hosted_button_id=YOUR-BUTTON-ID', // TODO: real PayPal link
+  // },
   {
     name: 'stripe',
     label: 'Donate with Card',
