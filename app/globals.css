@@ -147,6 +147,43 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
+/* Build Log icon — floats in the header, outside the nav bar */
+.build-log-icon {
+  position: fixed;
+  top: 1.4rem;
+  right: 1.4rem;
+  z-index: 101;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary);
+  border: 1px solid rgba(92, 49, 96, 0.15);
+  box-shadow: 0 4px 14px rgba(92, 49, 96, 0.18);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.build-log-icon i {
+  font-size: 1.15rem;
+  display: inline-flex;
+}
+.build-log-icon:hover {
+  transform: translateY(-2px);
+  background: var(--white);
+  box-shadow: 0 6px 18px rgba(92, 49, 96, 0.28);
+}
+@media (max-width: 900px) {
+  .build-log-icon {
+    top: 1rem;
+    right: 3.6rem; /* sit just left of the ☰ menu toggle */
+    width: 36px;
+    height: 36px;
+  }
+}
+
 .hero {
   position: relative;
   min-height: 85vh;

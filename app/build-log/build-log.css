@@ -1,0 +1,154 @@
+.build-log {
+  flex: 1;
+  background: linear-gradient(135deg, var(--cream), #fce4d6);
+  min-height: 70vh;
+  padding-bottom: 5rem;
+}
+
+.build-log-header {
+  text-align: center;
+  padding: 3.5rem 1.5rem 2.5rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.build-log-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--secondary);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+.build-log-eyebrow i {
+  font-size: 1.05rem;
+  display: inline-flex;
+}
+
+.build-log-header h1 {
+  color: var(--primary);
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 0 0.75rem;
+}
+
+.build-log-sub {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.build-log-body {
+  max-width: 760px;
+}
+
+.build-log-empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem 0;
+}
+
+.bl-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bl-entry {
+  position: relative;
+  display: flex;
+  gap: 1.25rem;
+  padding-bottom: 1.75rem;
+}
+
+/* vertical connector line through the markers */
+.bl-entry::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 1.4rem;
+  bottom: -0.1rem;
+  width: 2px;
+  background: rgba(92, 49, 96, 0.15);
+}
+.bl-entry:last-child::before {
+  display: none;
+}
+
+.bl-marker {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  margin-top: 0.35rem;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 2px rgba(92, 49, 96, 0.25);
+  position: relative;
+  z-index: 1;
+}
+
+.bl-content {
+  flex: 1 1 auto;
+  background: var(--white);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.bl-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.bl-time {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.bl-sha {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  color: var(--secondary);
+  text-decoration: none;
+  background: rgba(136, 90, 145, 0.08);
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.bl-sha:hover {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.bl-subject {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.bl-body {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 600px) {
+  .bl-entry {
+    gap: 0.9rem;
+  }
+  .bl-content {
+    padding: 0.85rem 1rem;
+  }
+}
