@@ -38,6 +38,11 @@ export default function Navbar() {
     const syncUrl = () => {
       const href = ID_TO_HREF[activeIdRef.current];
       if (!href) return;
+      // Scroll-spy only applies to the single-page home route. On dedicated
+      // routes (e.g. /employment) the section doesn't exist and activeId is a
+      // stale leftover from the home page, so never rewrite the URL to it —
+      // doing so would "redirect" /employment to /contact, etc.
+      if (!document.getElementById(activeIdRef.current)) return;
       if (window.location.pathname !== href && window.history?.replaceState) {
         window.history.replaceState(null, '', href);
       }
@@ -48,7 +53,13 @@ export default function Navbar() {
       const currentY = window.scrollY;
       const y = currentY + navH;
       const order = getSectionOrder();
-      if (!order.length) return;
+      // No scroll-spy sections on this route (e.g. /employment): clear any
+      // stale active link carried over from the home page so no nav item is
+      // wrongly highlighted.
+      if (!order.length) {
+        setActiveId((curr) => (curr ? '' : curr));
+        return;
+      }
 
       if (firstRun) {
         firstRun = false;

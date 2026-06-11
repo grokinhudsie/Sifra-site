@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const pathname = headers().get('x-pathname');
-  const bare = pathname === '/unlock' || pathname === '/qr-donate';
+  const bare = pathname === '/qr-donate';
 
   return (
     <html lang="en">
