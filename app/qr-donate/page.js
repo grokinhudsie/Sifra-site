@@ -16,12 +16,12 @@ const OPTIONS = [
   //   color: '#008CFF',
   //   href: 'https://venmo.com/u/YOUR-VENMO-HANDLE', // TODO: real Venmo link
   // },
-  // {
-  //   name: 'paypal',
-  //   label: 'Donate with PayPal',
-  //   color: '#003087',
-  //   href: 'https://www.paypal.com/donate/?hosted_button_id=YOUR-BUTTON-ID', // TODO: real PayPal link
-  // },
+  {
+    name: 'paypal',
+    label: 'Donate with PayPal',
+    color: '#003087',
+    href: 'https://www.paypal.com/donate/?hosted_button_id=NYBAXGYRU7JUU',
+  },
   {
     name: 'stripe',
     label: 'Donate with Card',
@@ -57,7 +57,7 @@ export default function DonatePage() {
         }}
       >
         <img
-          src="/Logos/Sifra Birth Center Logo With Tagline_Vertical Lockup_One-Line_Two-Color_RGB.svg"
+          src="/Logos/Sifra Birth Center Logo With Tagline_Vertical Lockup_Two-Color_QR.webp"
           alt="Sifra Birth Center"
           style={{
             display: 'block',
@@ -67,18 +67,6 @@ export default function DonatePage() {
             margin: '0 auto 2rem',
           }}
         />
-        <div
-          style={{
-            textTransform: 'uppercase',
-            letterSpacing: '0.18em',
-            fontSize: '0.78rem',
-            fontWeight: 700,
-            color: 'var(--secondary)',
-            marginBottom: '0.75rem',
-          }}
-        >
-          Support Our Work
-        </div>
         <h1
           style={{
             fontSize: 'clamp(2.4rem, 5vw, 3.2rem)',
@@ -110,8 +98,7 @@ export default function DonatePage() {
             maxWidth: '340px',
           }}
         >
-          Every gift helps make compassionate, family-centered birth care a
-          reality.
+          Every gift helps bring Sifra Birth Center closer to completion.
         </p>
 
         <div

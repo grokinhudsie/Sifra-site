@@ -167,7 +167,7 @@ export default function Navbar() {
     <nav className="nav">
       <div className="nav-inner">
         <Link href="/" className="logo" onClick={(e) => handleNavClick(e, LINKS[0])}>
-          <img src="/Logos/Sifra Birth Center Logo With Tagline_Horizontal Lockup_Three-Line_Two-Color_RGB.svg" alt="Sifra Birth Center" />
+          <img src="/Logos/Sifra Birth Center Logo With Tagline_Horizontal Lockup_Three-Line_Two-Color_RGB.webp" alt="Sifra Birth Center" />
         </Link>
         <button
           className="menu-toggle"
