@@ -18,7 +18,7 @@ export default function HomeSections() {
 
       <section id="about" className="fade-section" style={{ background: '#fff8f3' }}>
         <div className="container">
-          <h2 className="section-title" style={{ marginBottom: '3rem' }}>About Us</h2>
+          <h2 className="section-title" style={{ marginBottom: '3rem' }}>Who We Are</h2>
           <div className="about-grid">
             <img
               src="/About us hero image/AdobeStock_269043563.jpeg"
@@ -42,10 +42,22 @@ export default function HomeSections() {
             </div>
           </div>
 
-          <h3 className="section-title our-values-title" style={{ marginTop: '5rem' }}>Anabaptist Health Ministries</h3>
+          <h3 className="section-title" style={{ marginTop: '5rem' }}>Vision &amp; Mission</h3>
+          <div className="vision-mission-grid">
+            <div className="feature" style={{ textAlign: 'left' }}>
+              <h3>Our Vision</h3>
+              <p>We envision Northern Wisconsin to be a place where exceptional midwifery care is accessible, safe and affordable for everyone.</p>
+            </div>
+            <div className="feature" style={{ textAlign: 'left' }}>
+              <h3>Our Mission</h3>
+              <p>At Sifra we will build an exceptional team of midwives, and build a culture of life defined by our faith-based values, high standards of patient-centered care, and respect for our staff.</p>
+            </div>
+          </div>
+
+          <h3 className="section-title" style={{ marginTop: '5rem' }}>Anabaptist Health Ministries</h3>
           <p className="section-subtitle">Placeholder text describing our connection to Anabaptist Health Ministries and the shared mission of compassionate, faith-rooted care.</p>
 
-          <h3 className="section-title our-values-title" style={{ marginTop: '5rem' }}>Our Values</h3>
+          <h3 className="section-title" style={{ marginTop: '5rem' }}>Our Values</h3>
           <p className="section-subtitle">The principles that guide everything we do.</p>
           <div className="features">
             <div className="feature">
@@ -71,8 +83,31 @@ export default function HomeSections() {
             </div>
           </div>
 
-          <h3 className="section-title our-values-title" style={{ marginTop: '5rem' }}>Leadership & Staff</h3>
+          <h3 className="section-title" style={{ marginTop: '5rem' }}>Leadership & Staff</h3>
           <p className="section-subtitle">Placeholder text introducing the leadership team and staff members who serve at Sifra Birthing Center.</p>
+          <div className="features">
+            <div className="feature">
+              <div className="feature-img-circle feature-img-placeholder">
+                <span>Photo</span>
+              </div>
+              <h3>Name Placeholder</h3>
+              <p>Role placeholder — a short bio introducing this team member and their role at Sifra Birthing Center.</p>
+            </div>
+            <div className="feature">
+              <div className="feature-img-circle feature-img-placeholder">
+                <span>Photo</span>
+              </div>
+              <h3>Name Placeholder</h3>
+              <p>Role placeholder — a short bio introducing this team member and their role at Sifra Birthing Center.</p>
+            </div>
+            <div className="feature">
+              <div className="feature-img-circle feature-img-placeholder">
+                <span>Photo</span>
+              </div>
+              <h3>Name Placeholder</h3>
+              <p>Role placeholder — a short bio introducing this team member and their role at Sifra Birthing Center.</p>
+            </div>
+          </div>
         </div>
       </section>
 

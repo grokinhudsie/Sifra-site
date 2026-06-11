@@ -305,8 +305,29 @@ section#home { padding: 0; }
   height: 100%;
   object-fit: cover;
 }
+.feature-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  border: 2px dashed var(--primary-dark);
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 .feature h3 { color: var(--primary-dark); margin-bottom: 0.8rem; font-size: 1.3rem; }
 .feature p { color: var(--muted); }
+
+.vision-mission-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+@media (min-width: 900px) {
+  .vision-mission-grid { grid-template-columns: 1fr 1fr; }
+}
 
 .page-header {
   text-align: center;
