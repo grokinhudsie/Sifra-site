@@ -98,7 +98,9 @@ export default function DonatePage() {
             maxWidth: '340px',
           }}
         >
-          Every gift helps bring Sifra Birth Center closer to completion.
+          Every gift helps bring<br />
+          <span style={{ whiteSpace: 'nowrap' }}>Sifra Birth Center</span><br />
+          closer to completion.
         </p>
 
         <div
@@ -122,6 +124,7 @@ export default function DonatePage() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '0.65rem',
+                padding: '1rem 0.5rem',
               }}
             >
               <BrandLogo name={opt.name} />
