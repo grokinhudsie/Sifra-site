@@ -91,9 +91,11 @@ export default function HomeSections() {
                 <li>Affordable &amp; transparent pricing</li>
                 <li>Opportunities for midwifery students</li>
               </ol>
-              <div className="why-img-placeholder">
-                <span>Image</span>
-              </div>
+              <img
+                className="why-img"
+                src="/Why Sifra images/room rendering 1.jpg"
+                alt="Rendering of a homelike birth suite at Sifra Birthing Center"
+              />
             </div>
           </div>
         </div>
