@@ -6,8 +6,8 @@ import { getLenis } from './lenisInstance';
 
 const LINKS = [
   { href: '/', id: 'home', label: 'Home' },
-  { href: '/about', id: 'about', label: 'About Us' },
   { href: '/why-sifra', id: 'why', label: 'Why Sifra' },
+  { href: '/about', id: 'about', label: 'About Us' },
   { href: '/construction-update', id: 'construction', label: 'Construction Updates' },
   { href: '/midwife-ed-program', id: 'midwife', label: 'Midwife Education Program' },
   { href: '/contact', id: 'contact', label: 'Contact Us' },

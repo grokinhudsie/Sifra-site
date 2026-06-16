@@ -10,11 +10,96 @@ export default function HomeSections() {
             <h1>Welcoming New Life With Love & Care</h1>
             <p>
               A peaceful, family-centered birthing experience supported by
-              compassionate midwives and holistic care.
+              compassionate midwives delivering holistic care.
             </p>
           </div>
         </ParallaxHero>
       </section>
+
+      <section id="why" className="fade-section bg-sand">
+        <div className="container">
+          <h2 className="section-title">Why Sifra</h2>
+
+          <div className="why-block">
+            <h3 className="why-heading">The Maternal Healthcare Crisis</h3>
+            <ol className="why-list">
+              <li>
+                Local midwives are overwhelmed. As a result, at least one out
+                of three mothers seeking midwifery care is turned away due to
+                the lack of midwives.
+              </li>
+            </ol>
+            <img
+              className="why-img"
+              src="/Why Sifra images/maternal healthcare crisis graphic LARGE.webp"
+              alt="Graphic illustrating the maternal healthcare crisis"
+            />
+            <ol className="why-list" start={2}>
+              <li>
+                The need to hire more midwives is urgent, however without a
+                birth center it is almost impossible to recruit additional
+                midwives.
+              </li>
+              <li>
+                Rural hospitals in Wisconsin continue to close labor and
+                delivery units.
+              </li>
+            </ol>
+            <p className="why-img-title">
+              Rural Hospitals in WI Offering Obstetric Delivery Services
+            </p>
+            <img
+              className="why-img why-img--titled"
+              src="/Why Sifra images/decline of hospital delivery units graph LARGE.webp"
+              alt="Graph showing the decline of hospital labor and delivery units"
+            />
+            <ol className="why-list" start={4}>
+              <li>
+                Maternal death is rising and has doubled in the last two
+                decades.
+                <span className="why-cite">
+                  (Shellpfeffer et al., 2015) (KFF/CDC) (March of Dimes, 2025)
+                </span>
+              </li>
+              <li>
+                As a result, women freebirth, drive too many miles to find a
+                place to deliver, or settle for birth options they aren&apos;t
+                comfortable with.
+              </li>
+            </ol>
+          </div>
+
+          <div className="why-block">
+            <h3 className="why-heading">Sifra&apos;s Unique Offering</h3>
+            <div className="why-split">
+              <ol className="why-list why-list--arrow">
+                <li>
+                  Comprehensive Midwifery Care that includes:
+                  <ul className="why-sublist">
+                    <li>Compassionate, personal care</li>
+                    <li>Regular, comprehensive prenatal visits</li>
+                    <li>Routine labs and imaging</li>
+                    <li>Personalized birth experience</li>
+                    <li>Emotional support</li>
+                    <li>Lactation support</li>
+                    <li>Ability to retain your own decision making</li>
+                  </ul>
+                </li>
+                <li>Newborn exams &amp; screening</li>
+                <li>Homelike birth suites</li>
+                <li>A 20 minute drive to emergency medical care</li>
+                <li>Affordable &amp; transparent pricing</li>
+                <li>Opportunities for midwifery students</li>
+              </ol>
+              <div className="why-img-placeholder">
+                <span>Image</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr className="section-divider" />
 
       <section id="about" className="fade-section" style={{ background: '#fff8f3' }}>
         <div className="container">
@@ -106,41 +191,6 @@ export default function HomeSections() {
               </div>
               <h3>Name Placeholder</h3>
               <p>Role placeholder — a short bio introducing this team member and their role at Sifra Birthing Center.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <hr className="section-divider" />
-
-      <section id="why" className="fade-section bg-sand">
-        <div className="container">
-          <h2 className="section-title">Why Sifra</h2>
-          <p className="section-subtitle">
-            At Sifra, every birth story matters. We blend gentle, evidence-based care
-            with the warmth of home.
-          </p>
-          <div className="features">
-            <div className="feature">
-              <div className="feature-img-circle">
-                <img src="/Landing card images/AdobeStock_457881926.jpeg" alt="Personalized Care" />
-              </div>
-              <h3>Personalized Care</h3>
-              <p>One-on-one support from dedicated midwives throughout your pregnancy and birth.</p>
-            </div>
-            <div className="feature">
-              <div className="feature-img-circle">
-                <img src="/Landing card images/t2_8 - Photo.jpg" alt="Homelike Suites" />
-              </div>
-              <h3>Homelike Suites</h3>
-              <p>Private, calming birthing rooms designed for comfort, privacy, and family presence.</p>
-            </div>
-            <div className="feature">
-              <div className="feature-img-circle">
-                <img src="/Landing card images/AdobeStock_265649187.jpeg" alt="Postpartum Support" />
-              </div>
-              <h3>Postpartum Support</h3>
-              <p>Continued care for you and your newborn, including lactation and wellness visits.</p>
             </div>
           </div>
         </div>
