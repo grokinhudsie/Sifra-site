@@ -148,7 +148,6 @@
 }
 .bl-task.done .bl-task-title {
   color: var(--muted);
-  text-decoration: line-through;
 }
 .bl-task-meta {
   display: inline-block;
