@@ -84,11 +84,12 @@ export default function Navbar() {
           const idx = order.indexOf(id);
           const el = document.getElementById(id);
           if (!el) break;
-          const top = el.offsetTop;
-          const mid = top + el.offsetHeight / 2;
-          if (dir === 'down' && idx + 1 < order.length && y >= mid) {
-            id = order[idx + 1];
-            continue;
+          if (dir === 'down' && idx + 1 < order.length) {
+            const nextEl = document.getElementById(order[idx + 1]);
+            if (nextEl && y >= nextEl.offsetTop) {
+              id = order[idx + 1];
+              continue;
+            }
           }
           if (dir === 'up' && idx > 0) {
             const prevEl = document.getElementById(order[idx - 1]);
@@ -189,6 +190,9 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        <Link href="/donate" className="btn nav-donate" onClick={() => setOpen(false)}>
+          Donate
+        </Link>
       </div>
     </nav>
   );

@@ -26,6 +26,11 @@ export async function middleware(req) {
     return NextResponse.next({ request: { headers: requestHeaders } });
   }
 
+  // Local dev is always unlocked — the gate only guards production builds.
+  if (process.env.NODE_ENV !== 'production') {
+    return NextResponse.next({ request: { headers: requestHeaders } });
+  }
+
   const secret = process.env.SITE_GATE_SECRET;
   const token = req.cookies.get('sifra_gate')?.value;
 

@@ -77,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 35px;
+  gap: 20px;
 }
 .logo {
   text-decoration: none;
@@ -153,8 +153,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Build Log icon — floats in the header, outside the nav bar */
 .build-log-icon {
   position: fixed;
-  top: 1.4rem;
+  top: 50%;
   right: 1.4rem;
+  transform: translateY(-50%);
   z-index: 101;
   width: 40px;
   height: 40px;
@@ -174,17 +175,27 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
 }
 .build-log-icon:hover {
-  transform: translateY(-2px);
+  transform: translateY(-50%) scale(1.08);
   background: var(--white);
   box-shadow: 0 6px 18px rgba(92, 49, 96, 0.28);
 }
 @media (max-width: 900px) {
-  .build-log-icon {
-    top: 1rem;
-    right: 3.6rem; /* sit just left of the ☰ menu toggle */
+  .build-log-icon:not(.build-log-icon--footer) {
+    right: 1rem;
     width: 36px;
     height: 36px;
   }
+}
+
+/* Footer variant — pinned to the center-right of the footer */
+.build-log-icon--footer {
+  position: absolute;
+  top: 50%;
+  right: 1.4rem;
+  transform: translateY(-50%);
+}
+.build-log-icon--footer:hover {
+  transform: translateY(-50%) scale(1.08);
 }
 
 .hero {
@@ -204,7 +215,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-bg {
   position: absolute;
   inset: -20% 0 0 0;
-  background-image: url('/Landing hero image/AdobeStock_122610311.jpeg');
+  background-image: url('/Landing hero image/AdobeStock_200852520.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 30%;
@@ -257,6 +268,33 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow);
 }
 
+/* Donate CTA at the end of a content section */
+.section-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+}
+
+/* Standalone Donate button in the header */
+.nav-donate {
+  flex: none;
+  padding: 0.5rem 1.1rem;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* Standalone Donate button in the footer */
+.footer-cta {
+  margin-bottom: 1.5rem;
+}
+.footer-cta .btn {
+  color: var(--white);
+}
+.footer-cta .btn:hover {
+  color: var(--white);
+}
+
 section { padding: 5rem 2rem; contain: layout paint; }
 section#home { padding: 0; }
 .container { max-width: 1200px; margin: 0 auto; }
@@ -271,12 +309,22 @@ section#home { padding: 0; }
 .section-title.our-values-title {
   font-size: clamp(1.4rem, 3vw, 2.2rem);
 }
+.section-title.section-subheading {
+  font-size: clamp(1.5rem, 4vw, 2.3rem);
+}
 .section-subtitle {
   text-align: center;
   color: var(--muted);
   font-size: 1.3rem;
   margin: 0 auto 3.5rem;
   max-width: 600px;
+}
+.ahm-logo {
+  display: block;
+  margin: 0 auto 1.5rem;
+  max-width: 360px;
+  width: 100%;
+  height: auto;
 }
 
 .features {
@@ -285,7 +333,7 @@ section#home { padding: 0; }
   gap: 2rem;
 }
 @media (min-width: 900px) {
-  .features { grid-template-columns: repeat(3, 1fr); }
+  .features { grid-template-columns: repeat(2, 1fr); }
 }
 .feature {
   background: var(--white);
@@ -417,6 +465,25 @@ section#home { padding: 0; }
   .vision-mission-grid { grid-template-columns: 1fr 1fr; }
 }
 
+.values-panel {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow);
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+@media (min-width: 700px) {
+  .values-grid { grid-template-columns: 1fr 1fr; }
+}
+.values-grid .feature {
+  background: #fdf8f3;
+}
+
 .page-header {
   text-align: center;
   padding: 2rem 2rem;
@@ -442,10 +509,10 @@ section#home { padding: 0; }
 .about-grid img {
   width: 100%;
   border-radius: 16px;
-  mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
-  transform: translateZ(0);
-  will-change: transform;
+}
+/* Stack the about photo above the text before the column gets too narrow. */
+@media (max-width: 1050px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
 .about-text h2 {
   color: var(--primary-dark);
@@ -553,6 +620,7 @@ section#home { padding: 0; }
 .form-status { margin-top: 1rem; font-size: 1.15rem; color: var(--primary-dark); }
 
 footer {
+  position: relative;
   background: var(--primary-dark);
   color: var(--cream);
   text-align: center;
@@ -602,9 +670,101 @@ footer a { color: var(--accent); text-decoration: none; }
     transition: max-height 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
   }
   .menu-toggle { display: block; }
-  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
   .contact-grid .contact-info { order: 2; }
   .contact-grid .contact-form { order: 1; }
   section { padding: 3.5rem 1.5rem; }
   section#home { padding: 0; }
+}
+
+/* Donate page — landscape layout: large logo left, CTA right, credit below */
+.donate-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  background: radial-gradient(120% 120% at 50% 0%, var(--white) 0%, var(--cream) 70%);
+}
+.donate-card {
+  width: 100%;
+  max-width: 960px;
+  background: var(--white);
+  border-radius: 24px;
+  border: 1px solid rgba(92, 49, 96, 0.10);
+  box-shadow: 0 24px 60px rgba(92, 49, 96, 0.16);
+  padding: 3.5rem 3.5rem 2.5rem;
+}
+.donate-main {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+}
+.donate-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.donate-logo img {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+}
+.donate-cta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.donate-cta h1 {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  color: var(--primary-dark);
+  margin-bottom: 1.1rem;
+}
+.donate-rule {
+  display: block;
+  width: 54px;
+  height: 2px;
+  margin: 0 0 1.4rem;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.donate-tagline {
+  color: var(--text);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0 0 2rem;
+  max-width: 320px;
+}
+.donate-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+  max-width: 320px;
+}
+.donate-credit {
+  background: transparent;
+  margin-top: 3rem;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid rgba(92, 49, 96, 0.10);
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .donate-card {
+    padding: 2.5rem 1.75rem 2rem;
+  }
+  .donate-main {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .donate-logo img {
+    max-width: 240px;
+  }
 }

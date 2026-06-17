@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ParallaxHero from './ParallaxHero';
 import ContactForm from './ContactForm';
 
@@ -98,6 +99,10 @@ export default function HomeSections() {
               />
             </div>
           </div>
+
+          <div className="section-cta">
+            <Link href="/donate" className="btn">Donate</Link>
+          </div>
         </div>
       </section>
 
@@ -108,7 +113,7 @@ export default function HomeSections() {
           <h2 className="section-title" style={{ marginBottom: '3rem' }}>Who We Are</h2>
           <div className="about-grid">
             <img
-              src="/About us hero image/AdobeStock_269043563.jpeg"
+              src="/About us hero image/AdobeStock_241241507.webp"
               alt="Midwife with mother and newborn"
             />
             <div className="about-text">
@@ -129,70 +134,89 @@ export default function HomeSections() {
             </div>
           </div>
 
-          <h3 className="section-title" style={{ marginTop: '5rem' }}>Vision &amp; Mission</h3>
+          <h3 className="section-title section-subheading" style={{ marginTop: '5rem' }}>Vision, Mission, and Values</h3>
           <div className="vision-mission-grid">
             <div className="feature" style={{ textAlign: 'left' }}>
-              <h3>Our Vision</h3>
-              <p>We envision Northern Wisconsin to be a place where exceptional midwifery care is accessible, safe and affordable for everyone.</p>
+              <h3 style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', textAlign: 'center' }}>Sifra Vision</h3>
+              <p>We envision Northern Wisconsin to be a place where exceptional, sustainable midwifery care is accessible, safe and affordable for everyone.</p>
             </div>
             <div className="feature" style={{ textAlign: 'left' }}>
-              <h3>Our Mission</h3>
-              <p>At Sifra we will build an exceptional team of midwives, and build a culture of life defined by our faith-based values, high standards of patient-centered care, and respect for our staff.</p>
+              <h3 style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', textAlign: 'center' }}>Sifra Mission</h3>
+              <p>We will create Sifra Birth Center, assemble an exceptional team of midwives and build a culture of life. Our culture will be defined by our faith based values, high standards of family centered care, and respect for our staff.</p>
             </div>
           </div>
 
-          <h3 className="section-title" style={{ marginTop: '5rem' }}>Anabaptist Health Ministries</h3>
-          <p className="section-subtitle">Placeholder text describing our connection to Anabaptist Health Ministries and the shared mission of compassionate, faith-rooted care.</p>
-
-          <h3 className="section-title" style={{ marginTop: '5rem' }}>Our Values</h3>
-          <p className="section-subtitle">The principles that guide everything we do.</p>
-          <div className="features">
+          <div className="values-panel" style={{ marginTop: '2rem' }}>
+            <h3 className="section-title" style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem' }}>Sifra Values</h3>
+            <div className="values-grid">
             <div className="feature">
               <div className="feature-img-circle">
-                <img src="/Our Values images/AdobeStock_96188994.jpeg" alt="Natural & Holistic" />
+                <img src="/Our Values images/AdobeStock_96188994.jpeg" alt="Integrity" />
               </div>
-              <h3>Natural & Holistic</h3>
+              <h3>Integrity</h3>
               <p>We honor the body&apos;s innate ability to birth, supporting it with gentle, evidence-based care.</p>
             </div>
             <div className="feature">
               <div className="feature-img-circle">
-                <img src="/Our Values images/AdobeStock_624866327.jpeg" alt="Family-Centered" />
+                <img src="/Our Values images/AdobeStock_624866327.jpeg" alt="Compassion" />
               </div>
-              <h3>Family-Centered</h3>
-              <p>We welcome partners, and loved ones as part of your birth team.</p>
+              <h3>Compassion</h3>
+              <p>Placeholder text describing how compassion shapes the care we provide to every family.</p>
             </div>
             <div className="feature">
               <div className="feature-img-circle">
-                <img src="/Our Values images/AdobeStock_616208707.jpeg" alt="Excellence In Care" />
+                <img src="/Our Values images/AdobeStock_616208707.jpeg" alt="Personalized Care" />
               </div>
-              <h3>Excellence In Care</h3>
+              <h3>Personalized Care</h3>
               <p>Our experienced team meets the highest standards of safety and medical practice.</p>
+            </div>
+            <div className="feature">
+              <div className="feature-img-circle feature-img-placeholder">
+                <span>Photo</span>
+              </div>
+              <h3>Safety &amp; Continuous Improvement</h3>
+              <p>Placeholder text describing our commitment to safety and continuous improvement in everything we do.</p>
+            </div>
             </div>
           </div>
 
+          <h3 className="section-title" style={{ marginTop: '5rem' }}>Anabaptist Health Ministries</h3>
+          <img
+            className="ahm-logo"
+            src="/Logos/AHM logos/Anabaptist Health Ministries.webp"
+            alt="Anabaptist Health Ministries"
+          />
+          <p className="section-subtitle">Placeholder text describing our connection to Anabaptist Health Ministries and the shared mission of compassionate, faith-rooted care.</p>
+
           <h3 className="section-title" style={{ marginTop: '5rem' }}>Leadership & Staff</h3>
-          <p className="section-subtitle">Placeholder text introducing the leadership team and staff members who serve at Sifra Birthing Center.</p>
           <div className="features">
             <div className="feature">
               <div className="feature-img-circle feature-img-placeholder">
                 <span>Photo</span>
               </div>
-              <h3>Name Placeholder</h3>
-              <p>Role placeholder — a short bio introducing this team member and their role at Sifra Birthing Center.</p>
+              <h3>Katie Breitenmoser, CPM, LM</h3>
+              <p>Clinical Director</p>
             </div>
             <div className="feature">
               <div className="feature-img-circle feature-img-placeholder">
                 <span>Photo</span>
               </div>
-              <h3>Name Placeholder</h3>
-              <p>Role placeholder — a short bio introducing this team member and their role at Sifra Birthing Center.</p>
+              <h3>Andrew Headings</h3>
+              <p>Executive Director</p>
             </div>
             <div className="feature">
               <div className="feature-img-circle feature-img-placeholder">
                 <span>Photo</span>
               </div>
-              <h3>Name Placeholder</h3>
-              <p>Role placeholder — a short bio introducing this team member and their role at Sifra Birthing Center.</p>
+              <h3>Neil Martin</h3>
+              <p>Administrative Director</p>
+            </div>
+            <div className="feature">
+              <div className="feature-img-circle feature-img-placeholder">
+                <span>Photo</span>
+              </div>
+              <h3>Talitha Groshek</h3>
+              <p>Student Midwife</p>
             </div>
           </div>
         </div>
@@ -208,6 +232,10 @@ export default function HomeSections() {
           </p>
           <div style={{ textAlign: 'center', color: 'var(--muted)' }}>
             <p>Construction progress updates coming soon.</p>
+          </div>
+
+          <div className="section-cta">
+            <Link href="/donate" className="btn">Donate</Link>
           </div>
         </div>
       </section>
@@ -249,14 +277,14 @@ export default function HomeSections() {
                   <span className="icon"><i className="fi fi-rr-phone-flip"></i></span>
                   <div>
                     <strong>Phone</strong>
-                    <span>715-873-3440</span>
+                    <a href="tel:+17158733440">715-873-3440</a>
                   </div>
                 </div>
                 <div className="contact-item">
                   <span className="icon"><i className="fi fi-rr-envelope"></i></span>
                   <div>
                     <strong>Email</strong>
-                    <span>questions@sifrabirth.com</span>
+                    <a href="mailto:contact@sifrabirth.com">contact@sifrabirth.com</a>
                   </div>
                 </div>
               </div>

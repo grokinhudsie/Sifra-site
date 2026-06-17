@@ -3,7 +3,6 @@ import './globals.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SmoothScroll from './components/SmoothScroll';
-import BuildLogIcon from './components/BuildLogIcon';
 
 export const metadata = {
   title: 'Sifra Birthing Center — Where New Life Begins',
@@ -24,7 +23,6 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <SmoothScroll />
-        {!bare && <BuildLogIcon />}
         {!bare && <Navbar />}
         <main>{children}</main>
         {!bare && <Footer />}

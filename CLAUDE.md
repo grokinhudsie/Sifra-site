@@ -18,15 +18,27 @@ Resize target = ~2× the largest CSS pixel size it will render at. Current targe
 | any new card thumbnail | <300px rendered | 480–600px |
 | any new mid-size content image | half/third column | 1200–1600px |
 
-Use macOS `sips` (no extra deps). Always back up first to `public/_originals/` (gitignored) before overwriting in place.
+Use macOS `sips` for JPEG/PNG (no extra deps). Always back up first to `public/_originals/` (gitignored) before overwriting in place.
 
 ```bash
 # back up once if not already done
-cd "/Users/hudson_gomez/Desktop/Sifra website/public"
+cd "/Users/ahm-macbook-pro/Desktop/Sifra-site/public"
 mkdir -p _originals && cp -n "<folder>/<file>" "_originals/<folder>/" 2>/dev/null
 
 # resize in place — replace 480 with the target from the table above
 sips --resampleHeightWidthMax 480 -s formatOptions 80 "<path>" --out "<path>"
 ```
+
+### WebP
+
+`sips` on this machine can **read** webp but **cannot write** it (`Error: Can't write format: org.webmproject.webp`). Use `cwebp` (libwebp 1.5.0, installed at `~/.local/bin/cwebp` — call by full path, it is not on `PATH`). It does not resize, so resize first by piping through a PNG, then encode:
+
+```bash
+# back up the original webp first (see above), then:
+sips -s format png --resampleHeightWidthMax 1600 "<src>.webp" --out /tmp/_r.png
+~/.local/bin/cwebp -q 80 /tmp/_r.png -o "<dest>.webp" && rm /tmp/_r.png
+```
+
+`cwebp -q 80` matches the `sips` quality used for JPEGs. Reference webp images from JSX exactly like JPEGs (`src="/.../name.webp"`).
 
 After resizing, verify file sizes are reasonable (thumbnails <100 KB, hero <500 KB) and that the image still looks crisp on a Retina display. Originals in `_originals/` are the safety net — never delete without asking the user.
