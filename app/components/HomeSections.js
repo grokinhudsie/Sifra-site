@@ -8,6 +8,11 @@ export default function HomeSections() {
       <section id="home" className="fade-section">
         <ParallaxHero>
           <div className="hero-content">
+            <img
+              className="hero-logo"
+              src="/Logos/Sifra Birth Center Logo-Two Color-LARGE.webp"
+              alt="Sifra Birth Center"
+            />
             <h1>Welcoming New Life With Love & Care</h1>
             <p>
               A&nbsp;&nbsp;<span style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '1.5em', WebkitTextStroke: '.5px currentColor' }}>peaceful</span>, family-centered birthing experience{' '}
@@ -84,18 +89,21 @@ export default function HomeSections() {
                     <li>Ability to retain your own decision making</li>
                   </ul>
                 </li>
+              </ol>
+              <ul className="why-list why-list--arrow">
                 <li>Newborn exams &amp; screening</li>
                 <li>Homelike birth suites</li>
                 <li>A 20 minute drive to emergency medical care</li>
                 <li>Affordable &amp; transparent pricing</li>
                 <li>Opportunities for midwifery students</li>
-              </ol>
-              <img
-                className="why-img"
-                src="/Why Sifra images/room rendering 1.jpg"
-                alt="Rendering of a homelike birth suite at Sifra Birthing Center"
-              />
+              </ul>
             </div>
+            <img
+              className="why-img why-img--titled"
+              src="/Why Sifra images/room rendering 1.jpg"
+              alt="Rendering of a homelike birth suite at Sifra Birthing Center"
+            />
+            <p className="why-img-caption">Rendering</p>
           </div>
 
           <div className="section-cta">

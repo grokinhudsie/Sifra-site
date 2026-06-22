@@ -21,12 +21,59 @@ const getSectionOrder = () =>
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [activeId, setActiveId] = useState('home');
+  // True while the hero logo is still within the viewport. In that state the
+  // header logo is hidden (and on desktop the nav + Donate button are centered);
+  // once the hero logo scrolls up past the top, this flips false and the header
+  // reverts to the logo + spread-out layout.
+  const [heroLogoVisible, setHeroLogoVisible] = useState(false);
   const activeIdRef = useRef('home');
   const linksRef = useRef(null);
 
   useEffect(() => {
     activeIdRef.current = activeId;
   }, [activeId]);
+
+  useEffect(() => {
+    const heroLogo = document.querySelector('.hero-logo');
+    if (!heroLogo) {
+      setHeroLogoVisible(false);
+      return;
+    }
+    // The switch fires when the hero logo's bottom crosses behind the sticky
+    // nav. A single threshold flickers when you scroll slowly and hover right
+    // on the line, so use a hysteresis band: once switched, you must scroll a
+    // full BAND past the line before it switches back. Fast scrolls already
+    // jump the band in one frame; this only tames the slow-scroll jitter.
+    const BAND = 60;
+    const getNavH = () =>
+      document.querySelector('nav.nav')?.getBoundingClientRect().height ?? 120;
+
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const bottom = heroLogo.getBoundingClientRect().bottom;
+      const navH = getNavH();
+      setHeroLogoVisible((prev) =>
+        prev ? bottom > navH - BAND : bottom > navH + BAND
+      );
+    };
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(update);
+    };
+
+    // Seed synchronously so the centered/hidden-logo layout is right on first
+    // paint (the page loads at the top with the hero logo showing).
+    setHeroLogoVisible(heroLogo.getBoundingClientRect().bottom > getNavH());
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
 
   useEffect(() => {
     let raf = 0;
@@ -165,7 +212,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="nav">
+    <nav className={`nav${heroLogoVisible ? ' nav--hero-logo' : ''}`}>
       <div className="nav-inner">
         <Link href="/" className="logo" onClick={(e) => handleNavClick(e, LINKS[0])}>
           <img src="/Logos/Sifra Birth Center Logo With Tagline_Horizontal Lockup_Three-Line_Two-Color_RGB.webp" alt="Sifra Birth Center" />
