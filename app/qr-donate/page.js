@@ -98,7 +98,7 @@ export default function DonatePage() {
             maxWidth: '340px',
           }}
         >
-          Every gift helps bring<br />
+          Every gift helps bring the urgently needed<br />
           <span style={{ whiteSpace: 'nowrap' }}>Sifra Birth Center</span><br />
           closer to completion.
         </p>
@@ -151,6 +151,33 @@ export default function DonatePage() {
           </a>{' '}
           donation portal, a project of Anabaptist Health Ministries, Inc.
         </footer>
+
+        <p
+          style={{
+            marginTop: '1.25rem',
+            color: 'var(--muted)',
+            fontSize: '0.7rem',
+            lineHeight: 1.6,
+            textAlign: 'left',
+          }}
+        >
+          Information concerning Anabaptist Health Ministries, Inc., including
+          financial or charitable purposes, may be obtained, without cost, by
+          writing to its principal place of business at the following address:
+          Anabaptist Health Ministries, Inc., N5265 County Rd X, Gleason WI 54435
+          or by calling 715-873-3440. Anabaptist Health Ministries, Inc. was
+          formed in the state of Wisconsin for the purpose of: Show God&rsquo;s
+          love by revolutionizing healthcare and health education based on
+          Biblical values and principles. In addition, residents of the following
+          states may obtain financial and/or licensing information from their
+          states, as indicated. Your contributions may be eligible for a tax
+          deduction in accordance with applicable law. Registration in a state
+          does not imply endorsement, approval, or recommendation of Anabaptist
+          Health Ministries, Inc. by the state. Wisconsin: A financial statement
+          of the charitable organization disclosing assets, liabilities, fund
+          balances, revenue, and expenses for the preceding fiscal year will be
+          provided to any person upon request.
+        </p>
       </div>
     </section>
   );

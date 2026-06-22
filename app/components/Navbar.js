@@ -7,10 +7,10 @@ import { getLenis } from './lenisInstance';
 const LINKS = [
   { href: '/', id: 'home', label: 'Home' },
   { href: '/why-sifra', id: 'why', label: 'Why Sifra' },
-  { href: '/about', id: 'about', label: 'About Us' },
+  { href: '/about', id: 'about', label: 'Who We Are' },
   { href: '/construction-update', id: 'construction', label: 'Construction Updates' },
   { href: '/midwife-ed-program', id: 'midwife', label: 'Midwife Education Program' },
-  { href: '/contact', id: 'contact', label: 'Contact Us' },
+  { href: '/contact', id: 'contact', label: 'Get In Touch' },
 ];
 
 const ID_TO_HREF = Object.fromEntries(LINKS.map((l) => [l.id, l.href]));
@@ -190,6 +190,11 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        <Link href="/donate" className="btn nav-donate nav-donate-desktop" onClick={() => setOpen(false)}>
+          Donate
+        </Link>
+      </div>
+      <div className="nav-donate-row">
         <Link href="/donate" className="btn nav-donate" onClick={() => setOpen(false)}>
           Donate
         </Link>

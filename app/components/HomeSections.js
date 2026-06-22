@@ -10,8 +10,9 @@ export default function HomeSections() {
           <div className="hero-content">
             <h1>Welcoming New Life With Love & Care</h1>
             <p>
-              A peaceful, family-centered birthing experience supported by
-              compassionate midwives delivering holistic care.
+              A&nbsp;&nbsp;<span style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '1.5em', WebkitTextStroke: '.5px currentColor' }}>peaceful</span>, family-centered birthing experience{' '}
+              <br className="hero-break" />
+              supported by <span style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '1.5em', WebkitTextStroke: '.5px currentColor' }}>compassionate</span> midwives delivering holistic care.
             </p>
           </div>
         </ParallaxHero>
@@ -46,11 +47,8 @@ export default function HomeSections() {
                 delivery units.
               </li>
             </ol>
-            <p className="why-img-title">
-              Rural Hospitals in WI Offering Obstetric Delivery Services
-            </p>
             <img
-              className="why-img why-img--titled"
+              className="why-img"
               src="/Why Sifra images/decline of hospital delivery units graph LARGE.webp"
               alt="Graph showing the decline of hospital labor and delivery units"
             />
@@ -62,12 +60,12 @@ export default function HomeSections() {
                   (Shellpfeffer et al., 2015) (KFF/CDC) (March of Dimes, 2025)
                 </span>
               </li>
-              <li>
-                As a result, women freebirth, drive too many miles to find a
-                place to deliver, or settle for birth options they aren&apos;t
-                comfortable with.
-              </li>
             </ol>
+            <h3 className="why-heading" style={{ paddingTop: '2rem' }}>The Results</h3>
+            <p>
+              Women freebirth, drive too many miles to find a place to deliver,
+              or settle for birth options they aren&apos;t comfortable with.
+            </p>
           </div>
 
           <div className="why-block">
@@ -110,86 +108,86 @@ export default function HomeSections() {
 
       <section id="about" className="fade-section" style={{ background: '#fff8f3' }}>
         <div className="container">
-          <h2 className="section-title" style={{ marginBottom: '3rem' }}>Who We Are</h2>
-          <div className="about-grid">
-            <img
-              src="/About us hero image/AdobeStock_241241507.webp"
-              alt="Midwife with mother and newborn"
-            />
-            <div className="about-text">
-              <p>
-                Sifra Birthing Center was founded on a simple belief: birth is a
-                sacred, natural journey that deserves to be honored. &apos;Sifra&apos; is taken from the Bible in Exodus chapter 1, and derives
-                from the Hebrew midwife called &apos;Shiprah&apos;, who is recorded as
-                having disobeyed Pharoah&apos;s order to kill all male Hebrew
-                infants. This name choice attaches the birth center to a
-                strong, biblical value system that recognises the sacredness
-                and dignity of all life.
-              </p>
-              <p>
-                Our certified midwives and nurses are committed to providing
-                safe, holistic, and empowering care — where you and your
-                child&apos;s needs always come first.
-              </p>
-            </div>
-          </div>
+          <h2 className="section-title" style={{ marginBottom: '1rem' }}>Who We Are</h2>
 
-          <h3 className="section-title section-subheading" style={{ marginTop: '5rem' }}>Vision, Mission, and Values</h3>
-          <div className="vision-mission-grid">
-            <div className="feature" style={{ textAlign: 'left' }}>
-              <h3 style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', textAlign: 'center' }}>Sifra Vision</h3>
-              <p>We envision Northern Wisconsin to be a place where exceptional, sustainable midwifery care is accessible, safe and affordable for everyone.</p>
-            </div>
-            <div className="feature" style={{ textAlign: 'left' }}>
-              <h3 style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', textAlign: 'center' }}>Sifra Mission</h3>
-              <p>We will create Sifra Birth Center, assemble an exceptional team of midwives and build a culture of life. Our culture will be defined by our faith based values, high standards of family centered care, and respect for our staff.</p>
-            </div>
-          </div>
-
-          <div className="values-panel" style={{ marginTop: '2rem' }}>
-            <h3 className="section-title" style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem' }}>Sifra Values</h3>
-            <div className="values-grid">
-            <div className="feature">
-              <div className="feature-img-circle">
-                <img src="/Our Values images/AdobeStock_96188994.jpeg" alt="Integrity" />
-              </div>
-              <h3>Integrity</h3>
-              <p>We honor the body&apos;s innate ability to birth, supporting it with gentle, evidence-based care.</p>
-            </div>
-            <div className="feature">
-              <div className="feature-img-circle">
-                <img src="/Our Values images/AdobeStock_624866327.jpeg" alt="Compassion" />
-              </div>
-              <h3>Compassion</h3>
-              <p>Placeholder text describing how compassion shapes the care we provide to every family.</p>
-            </div>
-            <div className="feature">
-              <div className="feature-img-circle">
-                <img src="/Our Values images/AdobeStock_616208707.jpeg" alt="Personalized Care" />
-              </div>
-              <h3>Personalized Care</h3>
-              <p>Our experienced team meets the highest standards of safety and medical practice.</p>
-            </div>
-            <div className="feature">
-              <div className="feature-img-circle feature-img-placeholder">
-                <span>Photo</span>
-              </div>
-              <h3>Safety &amp; Continuous Improvement</h3>
-              <p>Placeholder text describing our commitment to safety and continuous improvement in everything we do.</p>
-            </div>
-            </div>
-          </div>
-
-          <h3 className="section-title" style={{ marginTop: '5rem' }}>Anabaptist Health Ministries</h3>
           <img
             className="ahm-logo"
             src="/Logos/AHM logos/Anabaptist Health Ministries.webp"
             alt="Anabaptist Health Ministries"
           />
-          <p className="section-subtitle">Placeholder text describing our connection to Anabaptist Health Ministries and the shared mission of compassionate, faith-rooted care.</p>
+          <p className="section-subtitle" style={{ maxWidth: 'none', textAlign: 'left' }}>Sifra Birth Center is proposed by Anabaptist Health Ministries, Inc. — a faith based nonprofit organization, recognized by the IRS as a 501(c)(3) tax-exempt organization — as a freestanding birth center and midwife education ministry to be located in Merrill, Wisconsin. Rooted in Christian values, Sifra will blend the clinical excellence of modern midwifery with compassionate, faith-integrated care.</p>
 
-          <h3 className="section-title" style={{ marginTop: '5rem' }}>Leadership & Staff</h3>
-          <div className="features">
+          <div className="about-grid">
+            <img
+              src="/About us hero image/IMG_baby.webp"
+              alt="Midwife with mother and newborn"
+            />
+            <div className="about-text">
+              <p>
+                Imagine a home-like place where families can come to deliver
+                their babies: a home away from home. That is what we envision
+                Sifra to be. We want a place that feels like home, but has all
+                the amenities needed for the safe arrival of a baby.
+              </p>
+              <p>
+                An important part of this homelike, peaceful environment is the
+                staff. To create this environment, we need midwives and birth
+                attendants who truly care about the health and wellbeing of both
+                mother and baby. We envision a place where mothers <em>get</em> to go
+                to deliver their baby versus a place where they <em>have</em> to go
+                for the delivery.
+              </p>
+              <p>
+                At Sifra, we are working to design a facility that meets
+                families&apos; needs for privacy and comfort along with the
+                staff&apos;s need for a good working environment.
+              </p>
+              <p>
+                Our goal is to have up to four full-time midwives working out of
+                Sifra. With four midwives, Sifra will have the potential to
+                deliver 300 or more babies per year, with many other families
+                served via women&apos;s health consultations.
+              </p>
+            </div>
+          </div>
+
+          <h3 className="section-title section-subheading" style={{ marginTop: '5rem' }}>Vision, Mission, &amp; Values</h3>
+          <div className="vision-mission-grid">
+            <div className="feature" style={{ textAlign: 'left' }}>
+              <h3 style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', WebkitTextStroke: '1px currentColor', textAlign: 'center' }}>Sifra Vision</h3>
+              <p>We envision Northern Wisconsin to be a place where exceptional, sustainable midwifery care is accessible, safe and affordable for everyone.</p>
+            </div>
+            <div className="feature" style={{ textAlign: 'left' }}>
+              <h3 style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', WebkitTextStroke: '1px currentColor', textAlign: 'center' }}>Sifra Mission</h3>
+              <p>We will create Sifra Birth Center, assemble an exceptional team of midwives and build a culture of life. Our culture will be defined by our faith based values, high standards of family centered care, and respect for our staff.</p>
+            </div>
+          </div>
+
+          <div className="values-panel" style={{ marginTop: '2rem' }}>
+            <h3 className="section-title" style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', WebkitTextStroke: '1px currentColor' }}>Sifra Values</h3>
+            <p style={{ fontFamily: '"mr-eaves-xl-sans", sans-serif', color: 'var(--primary)', textAlign: 'center' }}>These are the values that guide our actions.</p>
+            <div className="values-grid">
+            <div className="feature">
+              <h3>Integrity</h3>
+              <p>Our devotion to integrity means our actions will be guided by a commitment to virtue, truthfulness, and dependability.</p>
+            </div>
+            <div className="feature">
+              <h3>Compassion</h3>
+              <p>Our devotion to compassion means our actions will be guided by a sincere desire to bless, care for, and help. This applies to both staff and the families we serve.</p>
+            </div>
+            <div className="feature">
+              <h3>Personalized Care</h3>
+              <p>Our devotion to personalized care means we will honor the individuality of each person we serve. Every family is unique &ndash; their health history, background, preferences and beliefs.</p>
+            </div>
+            <div className="feature">
+              <h3>Safety &amp; Continuous Improvement</h3>
+              <p>Our devotion to safety means we will not allow outside priorities and pressure to compromise the safety of our clients. Our commitment to continuous improvement means we are compelled to relentlessly improve our education, skills, client outcomes and relevance to our communities.</p>
+            </div>
+            </div>
+          </div>
+
+          <h3 className="section-title section-subheading" style={{ marginTop: '5rem' }}>Leadership & Staff</h3>
+          <div className="features" style={{ marginTop: '2rem' }}>
             <div className="feature">
               <div className="feature-img-circle feature-img-placeholder">
                 <span>Photo</span>
@@ -230,8 +228,16 @@ export default function HomeSections() {
           <p className="section-subtitle">
             Follow along as Sifra Birthing Center takes shape.
           </p>
+          <img
+            className="why-img"
+            src="/Building renders/Sifra render 2.jpg"
+            alt="Architectural render of the Sifra Birthing Center"
+          />
           <div style={{ textAlign: 'center', color: 'var(--muted)' }}>
-            <p>Construction progress updates coming soon.</p>
+            <p>
+              The home for Sifra Birth Center will be a beautiful wooded parcel on the
+              east side of Merrill on Highway W. Further updates coming soon.
+            </p>
           </div>
 
           <div className="section-cta">
@@ -248,8 +254,29 @@ export default function HomeSections() {
           <p className="section-subtitle">
             Training the next generation of compassionate, skilled midwives.
           </p>
-          <div style={{ textAlign: 'center', color: 'var(--muted)' }}>
-            <p>Program details coming soon.</p>
+          <div className="why-block">
+            <p>
+              A secondary purpose of Sifra Birth Center is to educate the next
+              generation of midwives. Our goal is to create access to clinical
+              opportunities for student midwives enrolled in a distance learning
+              program at an accredited midwifery school. We hope to have four to
+              six students at any given time at the birth center.
+            </p>
+            <p>
+              It will take more than a year for a student to get their clinical
+              experience. Once they have that experience, they can become
+              licensed and enter the fellowship midwife program, in which they
+              take the lead in caring for a mother and her baby while an
+              experienced midwife assists.
+            </p>
+            <p>
+              The goal of this program is to educate midwives who will not only
+              provide excellent care and do careful risk assessment but will
+              also give deeply personal care to mother and baby. This is the
+              heart of midwifery care. These new midwives can then return to
+              serve their own communities. Please reach out to us if you have
+              interest in becoming or sponsoring a midwife.
+            </p>
           </div>
         </div>
       </section>
@@ -270,7 +297,7 @@ export default function HomeSections() {
                   <span className="icon"><i className="fi fi-rs-marker"></i></span>
                   <div>
                     <strong>Address</strong>
-                    <span>Coming soon!</span>
+                    <span>N5265 County Rd X<br />Gleason WI, 54435</span>
                   </div>
                 </div>
                 <div className="contact-item">
