@@ -11,7 +11,7 @@ export default function EmploymentPage() {
       </header>
       <section>
         <div className="container" style={{ textAlign: 'center', color: 'var(--muted)' }}>
-          <p>Open positions and application details coming soon.</p>
+          <p>No open positions at this time.</p>
         </div>
       </section>
     </div>

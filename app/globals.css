@@ -549,6 +549,7 @@ section#home { padding: 0; }
 }
 .values-grid .feature {
   background: #fdf8f3;
+  border: 0.5px solid var(--primary);
 }
 .values-grid .feature h3 { font-size: 1.61rem; }
 

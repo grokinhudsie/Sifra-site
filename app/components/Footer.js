@@ -18,7 +18,7 @@ export default function Footer() {
         <i className="fi fi-rr-time-past" aria-hidden="true"></i>
       </Link>
       <p>
-        © {new Date().getFullYear()} Sifra Birthing Center
+        © {new Date().getFullYear()} Sifra Birth Center
       </p>
       <p className="footer-legal">
         Information concerning Anabaptist Health Ministries, Inc., including financial or charitable purposes, may be obtained, without cost, by writing to its principal place of business at the following address: Anabaptist Health Ministries, Inc., N5265 County Rd X, Gleason WI 54435 or by calling{' '}
