@@ -244,7 +244,7 @@ export default function HomeSections() {
                 <img src="/Staff/Katie1.webp" alt="Katie Breitenmoser" />
               </div>
               <h3>Katie Breitenmoser, CPM, LM</h3>
-              <p>Clinical Director</p>
+              <p className="staff-role">Clinical Director</p>
               <p>Katie became a certified and licensed CPM (Certified Professional Midwife) in 2018, following more than twelve years of study and apprenticeship in both home and birth center practices and over 350 births. She founded Windy Hill Midwifery, LLC, and has loved serving area families ever since. Since licensure, she has attended around 460 births and maintains a transfer-of-care rate of approximately 17.3%, a transfer-during-labor rate of 7.1% (the vast majority non-emergent), and a cesarean birth rate of approximately 3.5%.</p>
               <p>Katie views childbirth as an important and empowering physiological process that should be respected and safeguarded. A member of the Wisconsin Guild of Midwives, she is passionate about increasing access to high-quality midwifery care for all interested families and stays current through ongoing classes and certifications. Katie and her husband live on their dairy farm near Merrill. With five children &mdash; three still at home &mdash; she loves spending time with her family, gardening, and being involved in her community.</p>
             </div>
@@ -253,7 +253,7 @@ export default function HomeSections() {
                 <img src="/Staff/Andrew2.webp" alt="Andrew Headings" />
               </div>
               <h3>Andrew Headings</h3>
-              <p>Executive Director</p>
+              <p className="staff-role">Executive Director</p>
               <p>Andrew is the founder and CEO of Anabaptist Health Ministries and serves as executive director of Sifra Birth Center. A pre-med student, he plans to establish a family medicine clinic that will link arms with the birth center, extending broad-spectrum care to the community. Andrew has been married for 11 years and is the father of five children &mdash; most of whom were delivered by Katie.</p>
             </div>
             <div className="feature">
@@ -261,7 +261,7 @@ export default function HomeSections() {
                 <img src="/Staff/Neil1.webp" alt="Neil Martin" />
               </div>
               <h3>Neil Martin</h3>
-              <p>Administrative Director</p>
+              <p className="staff-role">Administrative Director</p>
               <p>Neil Martin joined Anabaptist Health Ministries (AHM) as Chief Operating Officer in early 2026, following nearly seventeen years as a dairy nutrition consultant. Neil is married to the love of his life, and together they are blessed with eight wonderful children. The family makes their home in Wausau, Wisconsin, and are active members of Bethel Christian Brotherhood in Merrill. Neil also owns a small family farm with cattle and hogs, where the family fills their spare time with meaningful work and togetherness.</p>
             </div>
             <div className="feature">
@@ -269,7 +269,7 @@ export default function HomeSections() {
                 <span>Photo</span>
               </div>
               <h3>Talitha Groshek</h3>
-              <p>Student Midwife</p>
+              <p className="staff-role">Student Midwife</p>
               <p>Over the past ten years, Talitha has become passionate about women&apos;s health from a holistic perspective, particularly pregnancy and birth. Her journey into midwifery began after the birth of her second child, when she chose to have her next two babies at home under the care of excellent midwives &mdash; an experience that delighted her. She is now pursuing her training through Windy Hill Midwifery and BioBirth Academy, with plans to become a licensed midwife in 2027. Talitha is certified in Neonatal Resuscitation and CPR/AED and attends as many additional trainings and workshops as family life comfortably allows. She lives in central Wisconsin with her husband and four children on their beginner homestead, raising sheep and chickens.</p>
             </div>
           </div>

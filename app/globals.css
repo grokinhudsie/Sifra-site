@@ -425,6 +425,7 @@ section#home { padding: 0; }
 }
 .feature h3 { color: var(--primary-dark); margin-bottom: 0.8rem; font-size: 1.3rem; font-family: var(--font-body); font-weight: 700; }
 .feature p { color: var(--muted); }
+.staff-role { font-family: "loretta", serif; font-weight: 600; margin-top: -0.6rem; margin-bottom: 1rem; }
 
 /* Why Sifra — crisis / offering content */
 .why-block { max-width: 900px; margin: 0 auto 3.5rem; }
@@ -651,7 +652,8 @@ section#home { padding: 0; }
 }
 .values-grid .feature {
   background: #fdf8f3;
-  border: 0.5px solid var(--primary);
+  border: 1px solid #d4bfd4;
+  box-shadow: none;
 }
 .values-grid .feature h3 { font-size: 1.61rem; }
 
