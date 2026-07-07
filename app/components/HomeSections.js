@@ -1,6 +1,20 @@
 import Link from 'next/link';
 import ParallaxHero from './ParallaxHero';
 import ContactForm from './ContactForm';
+import ExpandableImage from './ExpandableImage';
+
+const mapLegend = (
+  <ul className="map-legend">
+    <li>
+      <span className="map-legend-swatch map-legend-swatch--green" />
+      Hospitals delivering babies today
+    </li>
+    <li>
+      <span className="map-legend-swatch map-legend-swatch--tan" />
+      Hospitals no longer delivering babies
+    </li>
+  </ul>
+);
 
 export default function HomeSections() {
   return (
@@ -28,7 +42,36 @@ export default function HomeSections() {
           <h2 className="section-title">Why Sifra</h2>
 
           <div className="why-block">
-            <h3 className="why-heading">The Maternal Healthcare Crisis</h3>
+            <h3 className="why-heading">Wisconsin&apos;s Growing Maternity Care Crisis</h3>
+            <div className="why-intro">
+              <div className="why-intro-text">
+                <p>
+                  For over a decade Northern Wisconsin has been living with a
+                  growing maternity-care crisis. One rural hospital after
+                  another has chosen to close their obstetric units due to lack
+                  of both profitability and care providers. Families are now
+                  driving farther, have limited provider options, and are
+                  facing greater risks simply to welcome a baby.
+                </p>
+                <p>
+                  This map shows the region Sifra Birth Center will serve.
+                  Highlighted in green are the few rural hospitals still
+                  delivering babies; in tan, the many that have stopped
+                  offering birth services since 2012. It makes clear just how
+                  much our communities need additional, reliable maternity-care
+                  options close to home.
+                </p>
+              </div>
+              <div className="why-intro-map">
+                <ExpandableImage
+                  className="why-intro-img"
+                  src="/Why Sifra images/OB hospitals in WI map.webp"
+                  alt="Map of the region Sifra Birth Center will serve, showing rural hospitals still delivering babies in green and those that have stopped offering birth services since 2012 in tan"
+                  lightboxExtra={mapLegend}
+                />
+                {mapLegend}
+              </div>
+            </div>
             <ol className="why-list">
               <li>
                 Local midwives are overwhelmed. As a result, at least one out
@@ -39,7 +82,7 @@ export default function HomeSections() {
             <img
               className="why-img"
               src="/Why Sifra images/maternal healthcare crisis graphic LARGE.webp"
-              alt="Graphic illustrating the maternal healthcare crisis"
+              alt="Graphic illustrating Wisconsin's growing maternity care crisis"
             />
             <ol className="why-list" start={2}>
               <li>
@@ -197,25 +240,29 @@ export default function HomeSections() {
           <h3 className="section-title section-subheading" style={{ marginTop: '5rem' }}>Leadership & Staff</h3>
           <div className="features" style={{ marginTop: '2rem' }}>
             <div className="feature">
-              <div className="feature-img-circle feature-img-placeholder">
-                <span>Photo</span>
+              <div className="feature-img-circle">
+                <img src="/Staff/Katie1.webp" alt="Katie Breitenmoser" />
               </div>
               <h3>Katie Breitenmoser, CPM, LM</h3>
               <p>Clinical Director</p>
+              <p>Katie became a certified and licensed CPM (Certified Professional Midwife) in 2018, following more than twelve years of study and apprenticeship in both home and birth center practices and over 350 births. She founded Windy Hill Midwifery, LLC, and has loved serving area families ever since. Since licensure, she has attended around 460 births and maintains a transfer-of-care rate of approximately 17.3%, a transfer-during-labor rate of 7.1% (the vast majority non-emergent), and a cesarean birth rate of approximately 3.5%.</p>
+              <p>Katie views childbirth as an important and empowering physiological process that should be respected and safeguarded. A member of the Wisconsin Guild of Midwives, she is passionate about increasing access to high-quality midwifery care for all interested families and stays current through ongoing classes and certifications. Katie and her husband live on their dairy farm near Merrill. With five children &mdash; three still at home &mdash; she loves spending time with her family, gardening, and being involved in her community.</p>
             </div>
             <div className="feature">
-              <div className="feature-img-circle feature-img-placeholder">
-                <span>Photo</span>
+              <div className="feature-img-circle">
+                <img src="/Staff/Andrew2.webp" alt="Andrew Headings" />
               </div>
               <h3>Andrew Headings</h3>
               <p>Executive Director</p>
+              <p>Andrew is the founder and CEO of Anabaptist Health Ministries and serves as executive director of Sifra Birth Center. A pre-med student, he plans to establish a family medicine clinic that will link arms with the birth center, extending broad-spectrum care to the community. Andrew has been married for 11 years and is the father of five children &mdash; most of whom were delivered by Katie.</p>
             </div>
             <div className="feature">
-              <div className="feature-img-circle feature-img-placeholder">
-                <span>Photo</span>
+              <div className="feature-img-circle">
+                <img src="/Staff/Neil1.webp" alt="Neil Martin" />
               </div>
               <h3>Neil Martin</h3>
               <p>Administrative Director</p>
+              <p>Neil Martin joined Anabaptist Health Ministries (AHM) as Chief Operating Officer in early 2026, following nearly seventeen years as a dairy nutrition consultant. Neil is married to the love of his life, and together they are blessed with eight wonderful children. The family makes their home in Wausau, Wisconsin, and are active members of Bethel Christian Brotherhood in Merrill. Neil also owns a small family farm with cattle and hogs, where the family fills their spare time with meaningful work and togetherness.</p>
             </div>
             <div className="feature">
               <div className="feature-img-circle feature-img-placeholder">
@@ -223,6 +270,7 @@ export default function HomeSections() {
               </div>
               <h3>Talitha Groshek</h3>
               <p>Student Midwife</p>
+              <p>Over the past ten years, Talitha has become passionate about women&apos;s health from a holistic perspective, particularly pregnancy and birth. Her journey into midwifery began after the birth of her second child, when she chose to have her next two babies at home under the care of excellent midwives &mdash; an experience that delighted her. She is now pursuing her training through Windy Hill Midwifery and BioBirth Academy, with plans to become a licensed midwife in 2027. Talitha is certified in Neonatal Resuscitation and CPR/AED and attends as many additional trainings and workshops as family life comfortably allows. She lives in central Wisconsin with her husband and four children on their beginner homestead, raising sheep and chickens.</p>
             </div>
           </div>
         </div>
