@@ -166,7 +166,7 @@ export default function HomeSections() {
             src="/Logos/AHM logos/Anabaptist Health Ministries.webp"
             alt="Anabaptist Health Ministries"
           />
-          <p className="section-subtitle" style={{ maxWidth: 'none', textAlign: 'left' }}>Sifra Birth Center is proposed by Anabaptist Health Ministries, Inc. — a faith based nonprofit organization, recognized by the IRS as a 501(c)(3) tax-exempt organization — as a freestanding birth center and midwife education ministry to be located in Merrill, Wisconsin. Rooted in Christian values, Sifra will blend the clinical excellence of modern midwifery with compassionate, faith-integrated care.</p>
+          <p className="section-subtitle" style={{ maxWidth: 'none', textAlign: 'left' }}>Sifra Birth Center is proposed by Anabaptist Health Ministries, Inc. — a faith based nonprofit organization, recognized by the IRS as a 501(c)(3) tax-exempt organization — as a freestanding birth center and midwife education ministry to be located in Merrill, Wisconsin. Rooted in Christian values, Sifra will blend the clinical excellence of modern midwifery with compassionate, individualized care. Families from all walks of life will find a compassionate, healing refuge at Sifra Birth Center.</p>
 
           <div className="about-grid">
             <img
@@ -185,8 +185,8 @@ export default function HomeSections() {
                 staff. To create this environment, we need midwives and birth
                 attendants who truly care about the health and wellbeing of both
                 mother and baby. We envision a place where mothers <em>get</em> to go
-                to deliver their baby versus a place where they <em>have</em> to go
-                for the delivery.
+                to give birth to their baby versus a place where they <em>have</em> to go
+                for the birth of their baby.
               </p>
               <p>
                 At Sifra, we are working to design a facility that meets
@@ -196,7 +196,7 @@ export default function HomeSections() {
               <p>
                 Our goal is to have up to four full-time midwives working out of
                 Sifra. With four midwives, Sifra will have the potential to
-                deliver 300 or more babies per year, with many other families
+                welcome 300 or more babies per year, with many other families
                 served via women&apos;s health consultations.
               </p>
             </div>
@@ -240,13 +240,13 @@ export default function HomeSections() {
           <h3 className="section-title section-subheading" style={{ marginTop: '5rem' }}>Leadership & Staff</h3>
           <div className="features" style={{ marginTop: '2rem' }}>
             <div className="feature">
-              <div className="feature-img-circle">
-                <img src="/Staff/Katie1.webp" alt="Katie Breitenmoser" />
+              <div className="feature-img-circle feature-img-placeholder">
+                <span>Photo</span>
               </div>
               <h3>Katie Breitenmoser, CPM, LM</h3>
               <p className="staff-role">Clinical Director</p>
               <p>Katie became a certified and licensed CPM (Certified Professional Midwife) in 2018, following more than twelve years of study and apprenticeship in both home and birth center practices and over 350 births. She founded Windy Hill Midwifery, LLC, and has loved serving area families ever since. Since licensure, she has attended around 460 births and maintains a transfer-of-care rate of approximately 17.3%, a transfer-during-labor rate of 7.1% (the vast majority non-emergent), and a cesarean birth rate of approximately 3.5%.</p>
-              <p>Katie views childbirth as an important and empowering physiological process that should be respected and safeguarded. A member of the Wisconsin Guild of Midwives, she is passionate about increasing access to high-quality midwifery care for all interested families and stays current through ongoing classes and certifications. Katie and her husband live on their dairy farm near Merrill. With five children &mdash; three still at home &mdash; she loves spending time with her family, gardening, and being involved in her community.</p>
+              <p>Katie views childbirth as an important and empowering physiological process that should be respected and safeguarded. A member of the Wisconsin Guild of Midwives, she is passionate about increasing access to high-quality midwifery care for all interested families and stays current through ongoing classes and certifications. Katie and her husband live on their dairy farm near Merrill, WI. With five children &mdash; three still at home &mdash; she loves spending time with her family, gardening, and being involved in her community.</p>
             </div>
             <div className="feature">
               <div className="feature-img-circle">
@@ -254,7 +254,7 @@ export default function HomeSections() {
               </div>
               <h3>Andrew Headings</h3>
               <p className="staff-role">Executive Director</p>
-              <p>Andrew is the founder and CEO of Anabaptist Health Ministries and serves as executive director of Sifra Birth Center. A pre-med student, he plans to establish a family medicine clinic that will link arms with the birth center, extending broad-spectrum care to the community. Andrew has been married for 11 years and is the father of five children &mdash; most of whom were delivered by Katie.</p>
+              <p>Andrew is the founder and CEO of Anabaptist Health Ministries and serves as executive director of Sifra Birth Center. A pre-med student, he plans to establish a family medicine clinic that will link arms with the birth center, extending broad-spectrum care to the community. Andrew and his wife raise their family of five in Gleason, WI.</p>
             </div>
             <div className="feature">
               <div className="feature-img-circle">
@@ -262,7 +262,7 @@ export default function HomeSections() {
               </div>
               <h3>Neil Martin</h3>
               <p className="staff-role">Administrative Director</p>
-              <p>Neil Martin joined Anabaptist Health Ministries (AHM) as Chief Operating Officer in early 2026, following nearly seventeen years as a dairy nutrition consultant. Neil is married to the love of his life, and together they are blessed with eight wonderful children. The family makes their home in Wausau, Wisconsin, and are active members of Bethel Christian Brotherhood in Merrill. Neil also owns a small family farm with cattle and hogs, where the family fills their spare time with meaningful work and togetherness.</p>
+              <p>Neil Martin joined Anabaptist Health Ministries (AHM) as Chief Operating Officer in early 2026, following nearly seventeen years as a dairy nutrition consultant. Neil is married to the love of his life, and together they are blessed with eight wonderful children. The family makes their home in Wausau, WI, and are active members of Bethel Christian Brotherhood in Merrill. Neil also owns a small family farm with cattle and hogs, where the family fills their spare time with meaningful work and togetherness.</p>
             </div>
             <div className="feature">
               <div className="feature-img-circle feature-img-placeholder">
@@ -350,11 +350,11 @@ export default function HomeSections() {
               experience. Once they have that experience, they can become
               licensed and enter the fellowship midwife program, in which they
               take the lead in caring for a mother and her baby while an
-              experienced midwife assists.
+              experienced midwife provides oversight.
             </p>
             <p>
               The goal of this program is to educate midwives who will not only
-              provide excellent care and do careful risk assessment but will
+              provide excellent care and careful risk assessment but will
               also give deeply personal care to mother and baby. This is the
               heart of midwifery care. These new midwives can then return to
               serve their own communities. Please reach out to us if you have

@@ -496,6 +496,8 @@ section#home { padding: 0; }
 
 .why-block { max-width: 900px; margin: 0 auto 3.5rem; }
 .why-block:last-child { margin-bottom: 0; }
+.why-block > p { margin-bottom: 1rem; }
+.why-block > p:last-child { margin-bottom: 0; }
 .why-heading {
   color: var(--primary-dark);
   font-size: clamp(1.4rem, 3vw, 2rem);
