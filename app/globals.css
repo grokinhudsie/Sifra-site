@@ -242,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-bg {
   position: absolute;
   inset: -20% 0 0 0;
-  background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('/Landing hero image/AdobeStock_217727489.webp');
+  background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('/images/hero/landing-hero.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 30%;
@@ -378,6 +378,7 @@ section#home { padding: 0; }
   max-width: 700px;
   width: 100%;
   height: auto;
+  height: auto;
 }
 @media (max-width: 700px) {
   .ahm-logo { margin-top: 1.5rem; }
@@ -423,7 +424,7 @@ section#home { padding: 0; }
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-.feature h3 { color: var(--primary-dark); margin-bottom: 0.8rem; font-size: 1.3rem; font-family: var(--font-body); font-weight: 700; }
+.feature h3, .feature h4, .feature h5 { color: var(--primary-dark); margin-bottom: 0.8rem; font-size: 1.3rem; font-family: var(--font-body); font-weight: 700; }
 .feature p { color: var(--muted); }
 .staff-role { font-family: "loretta", serif; font-weight: 600; margin-top: -0.6rem; margin-bottom: 1rem; }
 
@@ -723,7 +724,7 @@ section#home { padding: 0; }
   border: 1px solid #d4bfd4;
   box-shadow: none;
 }
-.values-grid .feature h3 { font-size: 1.61rem; }
+.values-grid .feature h3, .values-grid .feature h4, .values-grid .feature h5 { font-size: 1.61rem; }
 
 .page-header {
   text-align: center;
@@ -749,6 +750,7 @@ section#home { padding: 0; }
 }
 .about-grid img {
   width: 100%;
+  height: auto;
   border-radius: 16px;
 }
 /* Stack the about photo above the text before the column gets too narrow. */
@@ -872,6 +874,11 @@ footer {
   font-size: 1.2rem;
 }
 footer a { color: var(--accent); text-decoration: none; }
+
+.footer-nap {
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+}
 
 .footer-legal {
   max-width: 60rem;

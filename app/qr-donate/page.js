@@ -1,10 +1,16 @@
 import BrandLogo from '../components/BrandLogo';
+import { pageMetadata } from '../lib/seo';
 
-export const metadata = {
-  title: 'Donate — Sifra Birthing Center',
+// QR-code landing variant of /donate: noindex, canonical points at /donate so
+// search engines consolidate signals on the real donate page.
+export const metadata = pageMetadata({
+  title: 'Donate | Support Sifra Birth Center',
   description:
-    'Support Sifra Birthing Center. Give via Venmo, PayPal, or card (Stripe).',
-};
+    'Your gift helps build Sifra Birth Center, a freestanding birth center serving Northern Wisconsin families. Give securely online by PayPal or card.',
+  path: '/qr-donate',
+  canonical: '/donate',
+  noindex: true,
+});
 
 // Three ways to give. Brand-colored buttons, official marks.
 // TODO: swap the placeholder hrefs below for the real destinations.
@@ -57,8 +63,10 @@ export default function DonatePage() {
         }}
       >
         <img
-          src="/Logos/Sifra Birth Center Logo With Tagline_Vertical Lockup_Two-Color_QR.webp"
+          src="/images/logos/sifra-logo-vertical-tagline.webp"
           alt="Sifra Birth Center"
+          width={524}
+          height={386}
           style={{
             display: 'block',
             width: '180px',

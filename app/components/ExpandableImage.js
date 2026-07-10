@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { getLenis } from './lenisInstance';
 
-export default function ExpandableImage({ src, alt, className, lightboxExtra }) {
+export default function ExpandableImage({ src, alt, className, lightboxExtra, ...imgAttrs }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -27,6 +27,7 @@ export default function ExpandableImage({ src, alt, className, lightboxExtra }) 
         className={`${className ?? ''} img-expandable`.trim()}
         src={src}
         alt={alt}
+        {...imgAttrs}
         role="button"
         tabIndex={0}
         onClick={() => setOpen(true)}

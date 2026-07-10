@@ -1,6 +1,11 @@
-export const metadata = {
-  title: 'Employment at Sifra — Sifra Birthing Center',
-};
+import { pageMetadata } from '../lib/seo';
+
+export const metadata = pageMetadata({
+  title: 'Employment | Careers at Sifra Birth Center',
+  description:
+    'Explore careers with Sifra Birth Center in Merrill, Wisconsin — midwifery, birth assistant, and support roles as our freestanding birth center takes shape.',
+  path: '/employment',
+});
 
 export default function EmploymentPage() {
   return (

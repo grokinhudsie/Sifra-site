@@ -1,7 +1,30 @@
 import Link from 'next/link';
+import { preload } from 'react-dom';
 import ParallaxHero from './ParallaxHero';
 import ContactForm from './ContactForm';
 import ExpandableImage from './ExpandableImage';
+import { SITE_URL } from '../lib/seo';
+
+// Person markup for the Leadership & Staff section; worksFor points at the
+// sitewide Organization entity defined in app/layout.js.
+const staffPerson = (name, jobTitle, image, honorificSuffix) => ({
+  '@type': 'Person',
+  name,
+  ...(honorificSuffix ? { honorificSuffix } : {}),
+  jobTitle,
+  worksFor: { '@id': `${SITE_URL}/#organization` },
+  image: `${SITE_URL}${image}`,
+});
+
+const STAFF_JSONLD = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    staffPerson('Katie Breitenmoser', 'Clinical Director', '/images/staff/katie-breitenmoser.webp', 'CPM, LM'),
+    staffPerson('Andrew Headings', 'Executive Director', '/images/staff/andrew-headings.webp'),
+    staffPerson('Neil Martin', 'Administrative Director', '/images/staff/neil-martin.webp'),
+    staffPerson('Talitha Groshek', 'Student Midwife', '/images/staff/talitha-groshek.webp'),
+  ],
+};
 
 const mapLegend = (
   <ul className="map-legend">
@@ -17,15 +40,26 @@ const mapLegend = (
 );
 
 export default function HomeSections() {
+  // The hero background (CSS background-image on .hero-bg) is the LCP element;
+  // preload it with high priority so it doesn't wait on stylesheet parsing.
+  preload('/images/hero/landing-hero.webp', { as: 'image', fetchPriority: 'high' });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(STAFF_JSONLD) }}
+      />
       <section id="home" className="fade-section">
         <ParallaxHero>
           <div className="hero-content">
             <img
               className="hero-logo"
-              src="/Logos/Sifra Birth Center Logo-Two Color-LARGE.webp"
+              src="/images/logos/sifra-logo.webp"
               alt="Sifra Birth Center"
+              width={676}
+              height={514}
+              fetchPriority="high"
             />
             <h1>Welcoming New Life With Love & Care</h1>
             <p>
@@ -65,8 +99,12 @@ export default function HomeSections() {
               <div className="why-intro-map">
                 <ExpandableImage
                   className="why-intro-img"
-                  src="/Why Sifra images/OB hospitals in WI map.webp"
-                  alt="Map of the region Sifra Birth Center will serve, showing rural hospitals still delivering babies in green and those that have stopped offering birth services since 2012 in tan"
+                  src="/images/why-sifra/ob-hospitals-wi-map.webp"
+                  alt="Map of the Northern Wisconsin region Sifra Birth Center will serve, showing rural hospitals still delivering babies in green and those that have stopped offering birth services since 2012 in tan"
+                  width={973}
+                  height={985}
+                  loading="lazy"
+                  decoding="async"
                   lightboxExtra={mapLegend}
                 />
                 {mapLegend}
@@ -81,8 +119,12 @@ export default function HomeSections() {
             </ol>
             <img
               className="why-img"
-              src="/Why Sifra images/maternal healthcare crisis graphic LARGE.webp"
+              src="/images/why-sifra/maternal-healthcare-crisis.webp"
               alt="Graphic illustrating Wisconsin's growing maternity care crisis"
+              width={1509}
+              height={377}
+              loading="lazy"
+              decoding="async"
             />
             <ol className="why-list" start={2}>
               <li>
@@ -97,8 +139,12 @@ export default function HomeSections() {
             </ol>
             <img
               className="why-img"
-              src="/Why Sifra images/decline of hospital delivery units graph LARGE.webp"
-              alt="Graph showing the decline of hospital labor and delivery units"
+              src="/images/why-sifra/hospital-delivery-units-decline.webp"
+              alt="Graph showing the decline of hospital labor and delivery units in Wisconsin"
+              width={1374}
+              height={619}
+              loading="lazy"
+              decoding="async"
             />
             <ol className="why-list" start={4}>
               <li>
@@ -143,8 +189,12 @@ export default function HomeSections() {
             </div>
             <img
               className="why-img why-img--titled"
-              src="/Why Sifra images/room rendering 1.jpg"
-              alt="Rendering of a homelike birth suite at Sifra Birthing Center"
+              src="/images/why-sifra/birth-suite-rendering.jpg"
+              alt="Architectural rendering of a homelike birth suite at Sifra Birth Center in Merrill, Wisconsin"
+              width={1600}
+              height={983}
+              loading="lazy"
+              decoding="async"
             />
             <p className="why-img-caption">Rendering</p>
           </div>
@@ -163,15 +213,23 @@ export default function HomeSections() {
 
           <img
             className="ahm-logo"
-            src="/Logos/AHM logos/Anabaptist Health Ministries.webp"
-            alt="Anabaptist Health Ministries"
+            src="/images/logos/anabaptist-health-ministries.webp"
+            alt="Anabaptist Health Ministries logo"
+            width={1001}
+            height={428}
+            loading="lazy"
+            decoding="async"
           />
           <p className="section-subtitle" style={{ maxWidth: 'none', textAlign: 'left' }}>Sifra Birth Center is proposed by Anabaptist Health Ministries, Inc. — a faith based nonprofit organization, recognized by the IRS as a 501(c)(3) tax-exempt organization — as a freestanding birth center and midwife education ministry to be located in Merrill, Wisconsin. Rooted in Christian values, Sifra will blend the clinical excellence of modern midwifery with compassionate, individualized care. Families from all walks of life will find a compassionate, healing refuge at Sifra Birth Center.</p>
 
           <div className="about-grid">
             <img
-              src="/About us hero image/IMG_baby.webp"
+              src="/images/about/midwife-mother-newborn.webp"
               alt="Midwife with mother and newborn"
+              width={1200}
+              height={1200}
+              loading="lazy"
+              decoding="async"
             />
             <div className="about-text">
               <p>
@@ -205,33 +263,33 @@ export default function HomeSections() {
           <h3 className="section-title section-subheading" style={{ marginTop: '5rem' }}>Vision, Mission, &amp; Values</h3>
           <div className="vision-mission-grid">
             <div className="feature" style={{ textAlign: 'left' }}>
-              <h3 style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', WebkitTextStroke: '1px currentColor', textAlign: 'center' }}>Sifra Vision</h3>
+              <h4 style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', WebkitTextStroke: '1px currentColor', textAlign: 'center' }}>Sifra Vision</h4>
               <p>We envision Northern Wisconsin to be a place where exceptional, sustainable midwifery care is accessible, safe and affordable for everyone.</p>
             </div>
             <div className="feature" style={{ textAlign: 'left' }}>
-              <h3 style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', WebkitTextStroke: '1px currentColor', textAlign: 'center' }}>Sifra Mission</h3>
+              <h4 style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', WebkitTextStroke: '1px currentColor', textAlign: 'center' }}>Sifra Mission</h4>
               <p>We will create Sifra Birth Center, assemble an exceptional team of midwives and build a culture of life. Our culture will be defined by our faith based values, high standards of family centered care, and respect for our staff.</p>
             </div>
           </div>
 
           <div className="values-panel" style={{ marginTop: '2rem' }}>
-            <h3 className="section-title" style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', WebkitTextStroke: '1px currentColor' }}>Sifra Values</h3>
+            <h4 className="section-title" style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', WebkitTextStroke: '1px currentColor' }}>Sifra Values</h4>
             <p style={{ fontFamily: '"mr-eaves-xl-sans", sans-serif', color: 'var(--primary)', textAlign: 'center' }}>These are the values that guide our actions.</p>
             <div className="values-grid">
             <div className="feature">
-              <h3>Integrity</h3>
+              <h5>Integrity</h5>
               <p>Our devotion to integrity means our actions will be guided by a commitment to virtue, truthfulness, and dependability.</p>
             </div>
             <div className="feature">
-              <h3>Compassion</h3>
+              <h5>Compassion</h5>
               <p>Our devotion to compassion means our actions will be guided by a sincere desire to bless, care for, and help. This applies to both staff and the families we serve.</p>
             </div>
             <div className="feature">
-              <h3>Personalized Care</h3>
+              <h5>Personalized Care</h5>
               <p>Our devotion to personalized care means we will honor the individuality of each person we serve. Every family is unique &ndash; their health history, background, preferences and beliefs.</p>
             </div>
             <div className="feature">
-              <h3>Safety &amp; Continuous Improvement</h3>
+              <h5>Safety &amp; Continuous Improvement</h5>
               <p>Our devotion to safety means we will not allow outside priorities and pressure to compromise the safety of our clients. Our commitment to continuous improvement means we are compelled to relentlessly improve our education, skills, client outcomes and relevance to our communities.</p>
             </div>
             </div>
@@ -241,34 +299,34 @@ export default function HomeSections() {
           <div className="features" style={{ marginTop: '2rem' }}>
             <div className="feature">
               <div className="feature-img-circle">
-                <img src="/Staff/Katie.webp" alt="Katie Breitenmoser" />
+                <img src="/images/staff/katie-breitenmoser.webp" alt="Katie Breitenmoser, CPM, LM, Clinical Director at Sifra Birth Center" width={700} height={700} loading="lazy" decoding="async" />
               </div>
-              <h3>Katie Breitenmoser, CPM, LM</h3>
+              <h4>Katie Breitenmoser, CPM, LM</h4>
               <p className="staff-role">Clinical Director</p>
               <p>Katie became a certified and licensed CPM (Certified Professional Midwife) in 2018, following more than twelve years of study and apprenticeship in both home and birth center practices and over 350 births. She founded Windy Hill Midwifery, LLC, and has loved serving area families ever since. Since licensure, she has attended around 460 births and maintains a transfer-of-care rate of approximately 17.3%, a transfer-during-labor rate of 7.1% (the vast majority non-emergent), and a cesarean birth rate of approximately 3.5%.</p>
               <p>Katie views childbirth as an important and empowering physiological process that should be respected and safeguarded. A member of the Wisconsin Guild of Midwives, she is passionate about increasing access to high-quality midwifery care for all interested families and stays current through ongoing classes and certifications. Katie and her husband live on their dairy farm near Merrill, WI. With five children &mdash; three still at home &mdash; she loves spending time with her family, gardening, and being involved in her community.</p>
             </div>
             <div className="feature">
               <div className="feature-img-circle">
-                <img src="/Staff/Andrew2.webp" alt="Andrew Headings" />
+                <img src="/images/staff/andrew-headings.webp" alt="Andrew Headings, Executive Director at Sifra Birth Center" width={701} height={701} loading="lazy" decoding="async" />
               </div>
-              <h3>Andrew Headings</h3>
+              <h4>Andrew Headings</h4>
               <p className="staff-role">Executive Director</p>
               <p>Andrew is the founder and CEO of Anabaptist Health Ministries and serves as executive director of Sifra Birth Center. A pre-med student, he plans to establish a family medicine clinic that will link arms with the birth center, extending broad-spectrum care to the community. Andrew and his wife raise their family of five in Gleason, WI.</p>
             </div>
             <div className="feature">
               <div className="feature-img-circle">
-                <img src="/Staff/Neil1.webp" alt="Neil Martin" />
+                <img src="/images/staff/neil-martin.webp" alt="Neil Martin, Administrative Director at Sifra Birth Center" width={701} height={701} loading="lazy" decoding="async" />
               </div>
-              <h3>Neil Martin</h3>
+              <h4>Neil Martin</h4>
               <p className="staff-role">Administrative Director</p>
               <p>Neil Martin joined Anabaptist Health Ministries (AHM) as Chief Operating Officer in early 2026, following nearly seventeen years as a dairy nutrition consultant. Neil is married to the love of his life, and together they are blessed with eight wonderful children. The family makes their home in Wausau, WI, and are active members of Bethel Christian Brotherhood in Merrill. Neil also owns a small family farm with cattle and hogs, where the family fills their spare time with meaningful work and togetherness.</p>
             </div>
             <div className="feature">
               <div className="feature-img-circle">
-                <img src="/Staff/Talitha.webp" alt="Talitha Groshek" />
+                <img src="/images/staff/talitha-groshek.webp" alt="Talitha Groshek, Student Midwife at Sifra Birth Center" width={700} height={700} loading="lazy" decoding="async" />
               </div>
-              <h3>Talitha Groshek</h3>
+              <h4>Talitha Groshek</h4>
               <p className="staff-role">Student Midwife</p>
               <p>Over the past ten years, Talitha has become passionate about women&apos;s health from a holistic perspective, particularly pregnancy and birth. Her journey into midwifery began after the birth of her second child, when she chose to have her next two babies at home under the care of excellent midwives &mdash; an experience that delighted her. She is now pursuing her training through Windy Hill Midwifery and BioBirth Academy, with plans to become a licensed midwife in 2027. Talitha is certified in Neonatal Resuscitation and CPR/AED and attends as many additional trainings and workshops as family life comfortably allows. She lives in central Wisconsin with her husband and four children on their beginner homestead, raising sheep and chickens.</p>
             </div>
@@ -313,8 +371,12 @@ export default function HomeSections() {
 
           <img
             className="why-img"
-            src="/Building renders/Sifra render 2.jpg"
-            alt="Architectural render of the Sifra Birthing Center"
+            src="/images/building/sifra-birth-center-rendering.jpg"
+            alt="Architectural rendering of Sifra Birth Center in Merrill, Wisconsin"
+            width={1400}
+            height={787}
+            loading="lazy"
+            decoding="async"
           />
           <div style={{ textAlign: 'center', color: 'var(--muted)' }}>
             <p>

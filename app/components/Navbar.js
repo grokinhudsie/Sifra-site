@@ -215,7 +215,7 @@ export default function Navbar() {
     <nav className={`nav${heroLogoVisible ? ' nav--hero-logo' : ''}`}>
       <div className="nav-inner">
         <Link href="/" className="logo" onClick={(e) => handleNavClick(e, LINKS[0])}>
-          <img src="/Logos/Sifra Birth Center Logo With Tagline_Horizontal Lockup_Three-Line_Two-Color_RGB.webp" alt="Sifra Birth Center" />
+          <img src="/images/logos/sifra-logo-horizontal-tagline.webp" alt="Sifra Birth Center" width={579} height={191} />
         </Link>
         <button
           className="menu-toggle"

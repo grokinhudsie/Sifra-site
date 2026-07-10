@@ -1,9 +1,24 @@
 import BrandLogo from '../components/BrandLogo';
+import { pageMetadata, SITE_URL } from '../lib/seo';
 
-export const metadata = {
-  title: 'Donate — Sifra Birthing Center',
+export const metadata = pageMetadata({
+  title: 'Donate | Support Sifra Birth Center',
   description:
-    'Support Sifra Birthing Center. Give via Venmo, PayPal, or card (Stripe).',
+    'Your gift helps build Sifra Birth Center, a freestanding birth center serving Northern Wisconsin families. Give securely online by PayPal or card.',
+  path: '/donate',
+});
+
+// Attaches a DonateAction to the sitewide Organization entity (defined in
+// app/layout.js) via its @id.
+const DONATE_JSONLD = {
+  '@context': 'https://schema.org',
+  '@type': 'NGO',
+  '@id': `${SITE_URL}/#organization`,
+  potentialAction: {
+    '@type': 'DonateAction',
+    name: 'Donate to Sifra Birth Center',
+    target: `${SITE_URL}/donate`,
+  },
 };
 
 // Three ways to give. Brand-colored buttons, official marks.
@@ -33,12 +48,18 @@ const OPTIONS = [
 export default function DonatePage() {
   return (
     <section className="donate-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(DONATE_JSONLD) }}
+      />
       <div className="donate-card">
         <div className="donate-main">
           <div className="donate-logo">
             <img
-              src="/Logos/Sifra Birth Center Logo With Tagline_Vertical Lockup_Two-Color_QR.webp"
+              src="/images/logos/sifra-logo-vertical-tagline.webp"
               alt="Sifra Birth Center"
+              width={524}
+              height={386}
             />
           </div>
 

@@ -1,10 +1,15 @@
 import './build-log.css';
 import { getCommits, COMMITS_REVALIDATE } from '../lib/commits';
+import { pageMetadata } from '../lib/seo';
 
-export const metadata = {
-  title: 'Build Log — Sifra Birthing Center',
+// noindex: this is an internal build log, not content for search results.
+// (Flagged in the SEO summary — remove `noindex: true` if the owner wants it indexed.)
+export const metadata = pageMetadata({
+  title: 'Build Log | Sifra Birth Center',
   description: 'A running log of every code change shipped to the Sifra website.',
-};
+  path: '/build-log',
+  noindex: true,
+});
 
 // Re-fetch commits at most once every COMMITS_REVALIDATE seconds. New commits
 // pushed to GitHub appear automatically once the cache revalidates.

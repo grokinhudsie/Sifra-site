@@ -17,6 +17,11 @@ export default function Footer() {
       >
         <i className="fi fi-rr-time-past" aria-hidden="true"></i>
       </Link>
+      <p className="footer-nap">
+        <strong>Sifra Birth Center</strong> · N5265 County Rd X, Gleason, WI 54435 ·{' '}
+        <a href="tel:+17158733440">715-873-3440</a> ·{' '}
+        <a href="mailto:contact@sifrabirth.com">contact@sifrabirth.com</a>
+      </p>
       <p>
         © {new Date().getFullYear()} Sifra Birth Center
       </p>

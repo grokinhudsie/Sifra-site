@@ -10,13 +10,16 @@ Resize target = ~2× the largest CSS pixel size it will render at. Current targe
 
 | Folder | Use | Long-edge max |
 |---|---|---|
-| `public/Our Values images/` | 120px circle thumbnails | 480px |
-| `public/Landing card images/` | 120px circle thumbnails | 480px |
-| `public/About us hero image/` | half-grid photo | 1600px |
-| `public/Landing hero image/` | full-viewport hero bg | 2400px |
+| `public/images/values/` | 120px circle thumbnails | 480px |
+| `public/images/cards/` | 120px circle thumbnails | 480px |
+| `public/images/about/` | half-grid photo | 1600px |
+| `public/images/hero/` | full-viewport hero bg | 2400px |
+| `public/og/` | 1200×630 social share image | 1200px |
 | any new full-bleed hero | full viewport | 2400px |
 | any new card thumbnail | <300px rendered | 480–600px |
 | any new mid-size content image | half/third column | 1200–1600px |
+
+All image paths are kebab-case with no spaces (`public/images/<section>/<descriptive-name>.webp`); name any new image the same way. (`public/_originals/` still uses the pre-rename folder names — that's fine, it's just the backup archive.)
 
 Use macOS `sips` for JPEG/PNG (no extra deps). Always back up first to `public/_originals/` (gitignored) before overwriting in place.
 
