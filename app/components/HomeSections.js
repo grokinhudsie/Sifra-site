@@ -240,8 +240,8 @@ export default function HomeSections() {
           <h3 className="section-title section-subheading" style={{ marginTop: '5rem' }}>Leadership & Staff</h3>
           <div className="features" style={{ marginTop: '2rem' }}>
             <div className="feature">
-              <div className="feature-img-circle feature-img-placeholder">
-                <span>Photo</span>
+              <div className="feature-img-circle">
+                <img src="/Staff/Katie.webp" alt="Katie Breitenmoser" />
               </div>
               <h3>Katie Breitenmoser, CPM, LM</h3>
               <p className="staff-role">Clinical Director</p>
@@ -265,8 +265,8 @@ export default function HomeSections() {
               <p>Neil Martin joined Anabaptist Health Ministries (AHM) as Chief Operating Officer in early 2026, following nearly seventeen years as a dairy nutrition consultant. Neil is married to the love of his life, and together they are blessed with eight wonderful children. The family makes their home in Wausau, WI, and are active members of Bethel Christian Brotherhood in Merrill. Neil also owns a small family farm with cattle and hogs, where the family fills their spare time with meaningful work and togetherness.</p>
             </div>
             <div className="feature">
-              <div className="feature-img-circle feature-img-placeholder">
-                <span>Photo</span>
+              <div className="feature-img-circle">
+                <img src="/Staff/Talitha.webp" alt="Talitha Groshek" />
               </div>
               <h3>Talitha Groshek</h3>
               <p className="staff-role">Student Midwife</p>
