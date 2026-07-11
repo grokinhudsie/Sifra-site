@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SmoothScroll from './components/SmoothScroll';
 import { SITE_URL, SITE_NAME, OG_IMAGE } from './lib/seo';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -66,6 +67,7 @@ export default function RootLayout({ children }) {
         {!bare && <Navbar />}
         <main>{children}</main>
         {!bare && <Footer />}
+        <Analytics />
       </body>
     </html>
   );
