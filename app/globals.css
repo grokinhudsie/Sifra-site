@@ -310,13 +310,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow);
 }
 
-/* Donate CTA at the end of a content section */
-.section-cta {
-  display: flex;
-  justify-content: center;
-  margin-top: 3.5rem;
-}
-
 /* Standalone Donate button in the header */
 /* Desktop: inline Donate in the nav row; centered row hidden */
 .nav-donate-row {

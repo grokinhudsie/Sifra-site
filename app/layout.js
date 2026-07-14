@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SmoothScroll from './components/SmoothScroll';
+import FadeInSections from './components/FadeInSections';
 import { SITE_URL, SITE_NAME, OG_IMAGE } from './lib/seo';
 import { Analytics } from '@vercel/analytics/next';
 
@@ -64,6 +65,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSONLD) }}
         />
         <SmoothScroll />
+        <FadeInSections />
         {!bare && <Navbar />}
         <main>{children}</main>
         {!bare && <Footer />}
