@@ -1,4 +1,5 @@
 import HeroSection from './components/sections/HeroSection';
+import HomeIntroSection from './components/sections/HomeIntroSection';
 import { pageMetadata } from './lib/seo';
 
 export const metadata = pageMetadata({
@@ -12,7 +13,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      {/* Additional home content goes here, between the hero and the footer. */}
+      <HomeIntroSection />
     </>
   );
 }

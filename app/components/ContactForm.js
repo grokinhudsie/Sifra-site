@@ -1,10 +1,26 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+const SUBJECTS = [
+  'General Inquiry',
+  'Schedule a Tour',
+  'Prenatal Care',
+  'Postpartum Support',
+  'Sifra Sponsorship',
+];
 
 export default function ContactForm() {
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [subject, setSubject] = useState(SUBJECTS[0]);
+
+  // Preselect the subject when linked as /contact?subject=<option>. Read in
+  // an effect (not useSearchParams) so the page can stay statically rendered.
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get('subject');
+    if (requested && SUBJECTS.includes(requested)) setSubject(requested);
+  }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -23,6 +39,7 @@ export default function ContactForm() {
       if (!res.ok) throw new Error('Request failed');
       setStatus({ ok: true, msg: 'Thank you! We will be in touch soon.' });
       e.target.reset();
+      setSubject(SUBJECTS[0]);
     } catch {
       setStatus({ ok: false, msg: 'Something went wrong. Please try again.' });
     } finally {
@@ -43,11 +60,15 @@ export default function ContactForm() {
       </div>
       <div className="form-group">
         <label htmlFor="subject">Subject</label>
-        <select id="subject" name="subject" defaultValue="General Inquiry">
-          <option>General Inquiry</option>
-          <option>Schedule a Tour</option>
-          <option>Prenatal Care</option>
-          <option>Postpartum Support</option>
+        <select
+          id="subject"
+          name="subject"
+          value={subject}
+          onChange={(e) => setSubject(e.target.value)}
+        >
+          {SUBJECTS.map((s) => (
+            <option key={s}>{s}</option>
+          ))}
         </select>
       </div>
       <div className="form-group">

@@ -96,11 +96,6 @@ export default function Navbar() {
           Donate
         </Link>
       </div>
-      <div className="nav-donate-row">
-        <Link href="/donate" className="btn nav-donate" onClick={() => setOpen(false)}>
-          Donate
-        </Link>
-      </div>
     </nav>
   );
 }

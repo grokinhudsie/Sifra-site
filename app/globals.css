@@ -104,13 +104,13 @@ h1, h2, h3, h4, h5, h6 {
   .nav--hero-logo .nav-inner { justify-content: center; }
 }
 @media (max-width: 900px) {
-  /* Header holds its original height via min-height. The logo sits in its
-     original full-width row on top (button below). When the hero logo is in
-     view the switcharoo (.nav--hero-logo .logo { display:none }) removes the
-     logo — min-height keeps the bar the same height (no page jump) and the flex
-     centering drops the Donate button to dead-center of the header. */
+  /* Compact mobile header: smaller logo, tighter padding. min-height (via
+     --nav-offset) holds the bar's height when the hero-logo switcharoo
+     (.nav--hero-logo .logo { display:none }) removes the logo — no page jump. */
+  :root { --nav-offset: 90px; }
   .nav {
-    min-height: 190px;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
   }
   .nav-inner {
     flex-wrap: wrap;
@@ -120,15 +120,15 @@ h1, h2, h3, h4, h5, h6 {
     order: 0;
     width: 100%;
     justify-content: center;
-    margin-bottom: 1rem;
   }
-  .nav-donate-row {
-    margin-top: 0;
+  .logo img {
+    height: 70px;
   }
   .menu-toggle {
     position: absolute;
     right: 1rem;
-    top: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 .nav-links {
@@ -227,17 +227,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 2rem;
+  padding: 4rem 2rem 0;
   margin: 0;
   width: 100%;
   color: var(--white);
   overflow: hidden;
   isolation: isolate;
+}
+@media (max-width: 900px) {
+  .hero {
+    min-height: 55vh;
+    min-height: 55svh;
+    padding-bottom: 3rem;
+  }
 }
 .hero-bg {
   position: absolute;
@@ -310,17 +318,9 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow);
 }
 
-/* Standalone Donate button in the header */
-/* Desktop: inline Donate in the nav row; centered row hidden */
-.nav-donate-row {
-  display: none;
-  justify-content: center;
-  margin-top: 1rem;
-}
+/* Standalone Donate button in the header (desktop only) */
 @media (max-width: 900px) {
-  /* Mobile: hide inline Donate, show centered button below the nav */
   .nav-donate-desktop { display: none; }
-  .nav-donate-row { display: flex; }
 }
 .nav-donate {
   flex: none;
@@ -365,6 +365,35 @@ section#home { padding: 0; }
   margin: 0 auto 3.5rem;
   max-width: 600px;
 }
+
+/* Home page intro copy under the hero */
+.home-intro { max-width: 800px; }
+.home-intro p { margin-bottom: 1.5rem; }
+.home-intro p:last-of-type { margin-bottom: 0; }
+.home-intro p a { color: var(--secondary); text-decoration: underline; }
+.home-intro-lead {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.5vw, 1.7rem);
+  line-height: 1.5;
+  color: var(--primary-dark);
+  text-align: center;
+}
+.home-intro-highlight {
+  font-family: "elaina-script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  -webkit-text-stroke: 0.5px currentColor;
+  line-height: 1.4;
+  color: var(--primary-dark);
+  text-align: center;
+  margin: 2.5rem auto;
+}
+.home-intro-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
 .ahm-logo {
   display: block;
   margin: 0 auto 1.5rem;
@@ -854,6 +883,19 @@ section#home { padding: 0; }
 .form-group textarea { resize: vertical; min-height: 120px; }
 
 .form-status { margin-top: 1rem; font-size: 1.2rem; color: var(--primary-dark); }
+
+/* Full-width image strip between page content and the footer */
+.page-bottom-image {
+  width: 100%;
+  height: clamp(240px, 45vh, 520px);
+  overflow: hidden;
+}
+.page-bottom-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 footer {
   position: relative;

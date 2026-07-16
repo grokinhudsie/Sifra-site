@@ -14,7 +14,7 @@ const staffPerson = (name, jobTitle, image, honorificSuffix) => ({
 const STAFF_JSONLD = {
   '@context': 'https://schema.org',
   '@graph': [
-    staffPerson('Katie Breitenmoser', 'Clinical Director', '/images/staff/katie-breitenmoser.webp', 'CPM, LM'),
+    staffPerson('Katie Breitenmoser', 'Lead Midwife, Clinical Director', '/images/staff/katie-breitenmoser.webp', 'CPM, LM'),
     staffPerson('Andrew Headings', 'Executive Director', '/images/staff/andrew-headings.webp'),
     staffPerson('Neil Martin', 'Administrative Director', '/images/staff/neil-martin.webp'),
     staffPerson('Talitha Groshek', 'Student Midwife', '/images/staff/talitha-groshek.webp'),
@@ -120,10 +120,10 @@ export default function AboutSection() {
           <div className="features" style={{ marginTop: '2rem' }}>
             <div className="feature">
               <div className="feature-img-circle">
-                <img src="/images/staff/katie-breitenmoser.webp" alt="Katie Breitenmoser, CPM, LM, Clinical Director at Sifra Birth Center" width={700} height={700} loading="lazy" decoding="async" />
+                <img src="/images/staff/katie-breitenmoser.webp" alt="Katie Breitenmoser, CPM, LM, Lead Midwife and Clinical Director at Sifra Birth Center" width={700} height={700} loading="lazy" decoding="async" />
               </div>
               <h4>Katie Breitenmoser, CPM, LM</h4>
-              <p className="staff-role">Clinical Director</p>
+              <p className="staff-role">Lead Midwife, Clinical Director</p>
               <p>Katie became a certified and licensed CPM (Certified Professional Midwife) in 2018, following more than twelve years of study and apprenticeship in both home and birth center practices and over 350 births. She founded Windy Hill Midwifery, LLC, and has loved serving area families ever since. Since licensure, she has attended around 460 births and maintains a transfer-of-care rate of approximately 17.3%, a transfer-during-labor rate of 7.1% (the vast majority non-emergent), and a cesarean birth rate of approximately 3.5%.</p>
               <p>Katie views childbirth as an important and empowering physiological process that should be respected and safeguarded. A member of the Wisconsin Guild of Midwives, she is passionate about increasing access to high-quality midwifery care for all interested families and stays current through ongoing classes and certifications. Katie and her husband live on their dairy farm near Merrill, WI. With five children &mdash; three still at home &mdash; she loves spending time with her family, gardening, and being involved in her community.</p>
             </div>
