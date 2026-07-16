@@ -2,7 +2,7 @@ export const SITE_URL = 'https://www.sifrabirth.com';
 export const SITE_NAME = 'Sifra Birth Center';
 
 export const OG_IMAGE = {
-  url: '/og/og-default.jpg',
+  url: '/og/og-default.png',
   width: 1200,
   height: 630,
   alt: 'Architectural rendering of Sifra Birth Center in Merrill, Wisconsin',
