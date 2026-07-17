@@ -15,7 +15,7 @@ export default function MidwifeSection() {
             six students at any given time at the birth center.
           </p>
           <p>
-            It will take more than a year for a student to get their clinical
+            It will take more than a year for students to get their clinical
             experience. Once they have that experience, they can become
             licensed and enter the fellowship midwife program, in which they
             take the lead in caring for a mother and her baby while an
@@ -23,7 +23,7 @@ export default function MidwifeSection() {
           </p>
           <p>
             The goal of this program is to educate midwives who will not only
-            provide excellent care and careful risk assessment but will
+            provide excellent care and careful risk assessment, but will
             also give deeply personal care to mother and baby. This is the
             heart of midwifery care. These new midwives can then return to
             serve their own communities. Please reach out to us if you have

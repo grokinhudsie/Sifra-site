@@ -36,7 +36,7 @@ export default function ConstructionSection() {
         </div>
 
         <img
-          className="why-img"
+          className="why-img why-img--titled"
           src="/images/building/sifra-birth-center-rendering.jpg"
           alt="Architectural rendering of Sifra Birth Center in Merrill, Wisconsin"
           width={1400}
@@ -44,6 +44,7 @@ export default function ConstructionSection() {
           loading="lazy"
           decoding="async"
         />
+        <p className="why-img-caption">Rendering</p>
         <div style={{ textAlign: 'center', color: 'var(--muted)' }}>
           <p>
             The home for Sifra Birth Center will be a beautiful wooded parcel on the

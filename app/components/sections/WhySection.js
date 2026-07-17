@@ -28,9 +28,9 @@ export default function WhySection() {
                 For over a decade Northern Wisconsin has been living with a
                 growing maternity-care crisis. One rural hospital after
                 another has chosen to close their obstetric units due to lack
-                of both profitability and care providers. Families are now
-                driving farther, have limited provider options, and are
-                facing greater risks simply to welcome a baby.
+                of both profitability and care providers. Families now have
+                limited provider options, drive farther for care, and face
+                greater risks simply to welcome a baby.
               </p>
               <p>
                 This map shows the region Sifra Birth Center will serve.
@@ -58,8 +58,7 @@ export default function WhySection() {
           <ol className="why-list">
             <li>
               Local midwives are overwhelmed. As a result, at least one out
-              of three mothers seeking midwifery care is turned away due to
-              the lack of midwives.
+              of three mothers seeking midwifery care is turned away.
             </li>
           </ol>
           <img
@@ -73,8 +72,8 @@ export default function WhySection() {
           />
           <ol className="why-list" start={2}>
             <li>
-              The need to hire more midwives is urgent, however without a
-              birth center it is almost impossible to recruit additional
+              The need to hire more midwives is urgent; however, without a
+              birth center, it is almost impossible to recruit additional
               midwives.
             </li>
             <li>
@@ -102,8 +101,8 @@ export default function WhySection() {
           </ol>
           <h3 className="why-heading" style={{ paddingTop: '2rem' }}>The Results</h3>
           <p>
-            Women freebirth, drive too many miles to find a place to deliver,
-            or settle for birth options they aren&apos;t comfortable with.
+            Women freebirth, drive long distances for maternity care, or
+            settle for birth options they aren&apos;t comfortable with.
           </p>
         </div>
 
@@ -120,13 +119,13 @@ export default function WhySection() {
                   <li>Personalized birth experience</li>
                   <li>Emotional support</li>
                   <li>Lactation support</li>
-                  <li>Ability to retain your own decision making</li>
+                  <li>Personal autonomy</li>
                 </ul>
               </li>
             </ol>
             <ul className="why-list why-list--arrow">
               <li>Newborn exams &amp; screening</li>
-              <li>Homelike birth suites</li>
+              <li>Home-like birth suites</li>
               <li>A 20 minute drive to emergency medical care</li>
               <li>Affordable &amp; transparent pricing</li>
               <li>Opportunities for midwifery students</li>

@@ -41,7 +41,7 @@ export default function AboutSection() {
             loading="lazy"
             decoding="async"
           />
-          <p className="section-subtitle" style={{ maxWidth: 'none', textAlign: 'left' }}>Sifra Birth Center is proposed by Anabaptist Health Ministries, Inc. — a faith based nonprofit organization, recognized by the IRS as a 501(c)(3) tax-exempt organization — as a freestanding birth center and midwife education ministry to be located in Merrill, Wisconsin. Rooted in Christian values, Sifra will blend the clinical excellence of modern midwifery with compassionate, individualized care. Families from all walks of life will find a compassionate, healing refuge at Sifra Birth Center.</p>
+          <p className="section-subtitle" style={{ maxWidth: 'none', textAlign: 'left' }}>Anabaptist Health Ministries, Inc., is a faith-based nonprofit recognized by the IRS as a 501(c)(3) tax-exempt organization. Sifra Birth Center is proposed by Anabaptist Health Ministries as a freestanding birth center and midwife education ministry to be located in Merrill, Wisconsin. Rooted in Christian values, Sifra will blend the clinical excellence of modern midwifery with compassionate, individualized care. Families from all walks of life will find a compassionate, healing refuge at Sifra Birth Center.</p>
 
           <div className="about-grid">
             <img
@@ -64,13 +64,13 @@ export default function AboutSection() {
                 staff. To create this environment, we need midwives and birth
                 attendants who truly care about the health and wellbeing of both
                 mother and baby. We envision a place where mothers <em>get</em> to go
-                to give birth to their baby versus a place where they <em>have</em> to go
+                to give birth to their baby, versus a place where they <em>have</em> to go
                 for the birth of their baby.
               </p>
               <p>
-                At Sifra, we are working to design a facility that meets
-                families&apos; needs for privacy and comfort along with the
-                staff&apos;s need for a good working environment.
+                At Sifra, we are working to create a peaceful haven for
+                families, and an inspiring, life-giving workplace for the
+                midwives and staff who support them.
               </p>
               <p>
                 Our goal is to have up to four full-time midwives working out of
@@ -85,11 +85,11 @@ export default function AboutSection() {
           <div className="vision-mission-grid">
             <div className="feature" style={{ textAlign: 'left' }}>
               <h4 style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', WebkitTextStroke: '1px currentColor', textAlign: 'center' }}>Sifra Vision</h4>
-              <p>We envision Northern Wisconsin to be a place where exceptional, sustainable midwifery care is accessible, safe and affordable for everyone.</p>
+              <p>We envision Northern Wisconsin to be a place where exceptional, sustainable midwifery care is accessible, safe, and affordable for everyone.</p>
             </div>
             <div className="feature" style={{ textAlign: 'left' }}>
               <h4 style={{ fontFamily: '"elaina-script", sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '2rem', WebkitTextStroke: '1px currentColor', textAlign: 'center' }}>Sifra Mission</h4>
-              <p>We will create Sifra Birth Center, assemble an exceptional team of midwives and build a culture of life. Our culture will be defined by our faith based values, high standards of family centered care, and respect for our staff.</p>
+              <p>We will create Sifra Birth Center, assemble an exceptional team of midwives, and build a culture of life. Our culture will be defined by our faith-based values, high standards of family-centered care, and respect for our staff.</p>
             </div>
           </div>
 
@@ -103,15 +103,15 @@ export default function AboutSection() {
             </div>
             <div className="feature">
               <h5>Compassion</h5>
-              <p>Our devotion to compassion means our actions will be guided by a sincere desire to bless, care for, and help. This applies to both staff and the families we serve.</p>
+              <p>Our devotion to compassion means our actions will be guided by a sincere desire to bless, care for, and help. This applies to both our staff, and the families we serve.</p>
             </div>
             <div className="feature">
               <h5>Personalized Care</h5>
-              <p>Our devotion to personalized care means we will honor the individuality of each person we serve. Every family is unique &ndash; their health history, background, preferences and beliefs.</p>
+              <p>Our devotion to personalized care means we will honor the individuality of each person we serve. Every family is unique &ndash; their health history, background, preferences, and beliefs.</p>
             </div>
             <div className="feature">
               <h5>Safety &amp; Continuous Improvement</h5>
-              <p>Our devotion to safety means we will not allow outside priorities and pressure to compromise the safety of our clients. Our commitment to continuous improvement means we are compelled to relentlessly improve our education, skills, client outcomes and relevance to our communities.</p>
+              <p>Our devotion to safety means we will not allow outside priorities and pressure to compromise the safety of our clients. Our commitment to continuous improvement means we are compelled to relentlessly improve our education, skills, client outcomes, and relevance to our communities.</p>
             </div>
             </div>
           </div>
