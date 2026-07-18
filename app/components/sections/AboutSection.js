@@ -45,10 +45,10 @@ export default function AboutSection() {
 
           <div className="about-grid">
             <img
-              src="/images/about/midwife-mother-newborn.webp"
-              alt="Midwife with mother and newborn"
-              width={1200}
-              height={1200}
+              src="/images/about/baby-mg-3645.webp"
+              alt="Newborn baby wearing a Welcome to the World onesie"
+              width={1201}
+              height={1201}
               loading="lazy"
               decoding="async"
             />
