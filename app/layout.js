@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SmoothScroll from './components/SmoothScroll';
+import ScrollTop from './components/ScrollTop';
 import PageBottomImage from './components/PageBottomImage';
 import FadeInSections from './components/FadeInSections';
 import { SITE_URL, SITE_NAME, OG_IMAGE } from './lib/seo';
@@ -66,6 +67,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSONLD) }}
         />
         <SmoothScroll />
+        <ScrollTop />
         <FadeInSections />
         {!bare && <Navbar />}
         <main>{children}</main>
